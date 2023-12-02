@@ -17,88 +17,35 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('index');
-});
 
-Route::get('/who-we-are/about-us', function () {
-    return view('pages/about');
-});
 
-Route::get('/who-we-are/vision-mission', function () {
-    return view('pages/vision-mission');
-});
+Route::view("/","index");
 
-Route::get('/who-we-are/where-we-work', function () {
-    return view('pages/where-we-work');
-});
+Route::view("/who-we-are/about-us","pages/about");
 
-Route::get('/who-we-are/people-behind-work', function () {
-    return view('pages/people-behind-work');
-});
+Route::view("/who-we-are/vision-mission","pages/vision-mission");
+Route::view("/who-we-are/where-we-work","pages/where-we-work");
+Route::view("/who-we-are/people-behind-work","pages/people-behind-work");
+Route::view("/who-we-are/about-us","pages/about");
 
-Route::get('/our-work/health', function () {
-    return view('pages/health');
-});
+Route::view("/our-work/health","pages/health");
+Route::view("/our-work/education","pages/education");
+Route::view("/our-work/livelihood","pages/livelihood");
+Route::view("/our-work/privileged-children","pages/privileged-children");
+Route::view("/our-work/disaster-relief","pages/disaster-relief");
 
-Route::get('/our-work/education', function () {
-    return view('pages/education');
-});
 
-Route::get('/our-work/livelihood', function () {
-    return view('pages/livelihood');
-});
+Route::view("/award-and-media/award-recognitions","pages/award-recognitions");
+Route::view("/award-and-media/press-release","pages/press-release");
+Route::view("/award-and-media/online-media","pages/online-media");
+Route::view("/award-and-media/tv-media","pages/tv-media");
+Route::view("/award-and-media/gallery","pages/gallery");
+Route::view("/award-and-media/video","pages/video");
 
-Route::get('/our-work/privileged-children', function () {
-    return view('pages/privileged-children');
-});
 
-Route::get('/our-work/disaster-relief', function () {
-    return view('pages/disaster-relief');
-});
+Route::view("/blog","pages/blog");
+Route::view("/blog/blog-details","pages/blog-details");
 
-Route::get('/award-and-media/award-recognitions', function () {
-    return view('pages/award-recognitions');
-});
+Route::view("/contact","pages/contact");
 
-Route::get('/award-and-media/press-release', function () {
-    return view('pages/press-release');
-});
-
-Route::get('/award-and-media/online-media', function () {
-    return view('pages/online-media');
-});
-
-Route::get('/award-and-media/tv-media', function () {
-    return view('pages/award-recognitions');
-});
-
-Route::get('/award-and-media/gallery', function () {
-    return view('pages/gallery');
-});
-
-Route::get('/award-and-media/video', function () {
-    return view('pages/video');
-});
-
-Route::get('/blog', function () {
-    return view('pages/blog');
-});
-
-Route::get('/blog/blog-details', function () {
-    return view('pages/blog-details');
-});
-
-Route::get('/contact', function () {
-    return view('pages/contact');
-});
-
-// ---------------------------------
-
-Route::get('/the-kft-team/donate', function () {
-    return view('pages/donate');
-});
-
-Route::get('/test', function () {
-    return view('pages/test');
-});
+Route::view("/the-kft-team/donate","pages/donate");
