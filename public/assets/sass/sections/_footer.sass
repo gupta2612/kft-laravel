@@ -1,0 +1,182 @@
+/*******************************************************/
+/******************* ## Main Footer *******************/
+/*******************************************************/
+.main-footer
+    +res-ab(xl)
+        background-size: 100% 100%
+        
+.footer-newsletter
+    +container(525px)
+    h5
+        font-size: 28px
+        text-align: center
+    form
+        display: flex
+        margin-top: 28px
+        align-items: center
+        margin-bottom: 60px
+        border-radius: 20px
+        border: 2px solid rgba(255, 255, 255, 0.5)
+        +res-bl(xs)
+            margin-bottom: 95px
+        label
+            line-height: 1
+            margin-bottom: 0
+            margin-left: 35px
+            color: $yellow-color
+            margin-right: 15px
+            padding-right: 16px
+            border-right: 1px solid rgba(255, 255, 255, 0.5)
+            +res-bl(ms)
+                display: none
+        input
+            border: none
+            font-size: 15px
+            padding: 10px 5px
+            background: transparent
+            +res-bl(ms)
+                padding-left: 20px
+            &::placeholder
+                color: white
+                font-style: italic
+        .theme-btn
+            flex: none
+            margin: -2px
+            font-size: 16px
+            border-radius: 0 20px 20px 0
+            .btn-text
+                +gapLR(padding, 25px)
+            +res-bl(xs)
+                position: absolute
+                left: 50%
+                border-radius: 20px
+                top: calc(100% + 10px)
+                transform: translate(-50%)
+
+    
+.footer-title
+    font-size: 22px
+    margin-bottom: 28px
+    
+.widget_contact
+    ul
+        li
+            font-style: italic
+            &:not(:last-child)
+                margin-bottom: 8px
+            b
+                margin-right: 5px
+                color: $primary-color
+                
+.widget_menu
+    ul
+        li
+            &:not(:last-child)
+                margin-bottom: 8px
+            &:before
+                content: "\f061"
+                margin-right: 8px
+                font-size: 0.9em
+                font-family: 'Font Awesome 5 Pro'
+        
+.footer-white
+    .footer-title,
+    .footer-newsletter h5
+        color: white
+    .footer-widget
+        p, li, a
+            color: #d5d5d5
+            
+.footer-widget
+    margin-bottom: 50px
+    .social-style-one
+        a
+            +size(46px)
+            color: white
+            line-height: 46px
+            
+/* Footer Bottom */
+.copyright-text
+    p
+        font-size: 18px
+        font-weight: 700
+        margin-bottom: 10px
+        color: $heading-color
+        a
+            color: $primary-color
+            
+.footer-bottom-menu
+    ul
+        flex-wrap: wrap
+        align-items: center
+        display: inline-flex
+        justify-content: center
+        li
+            line-height: 1
+            margin-bottom: 5px
+            a
+                font-size: 15px
+                font-weight: 700
+                color: $heading-color
+            &:not(:last-child)
+                margin-right: 15px
+                padding-right: 15px
+                border-right: 1px solid $heading-color
+            
+/* Footer Three */
+.footer-three
+    .footer-title
+        line-height: 1
+        padding-left: 11px
+        text-transform: uppercase
+        border-left: 6px solid $primary-color
+    .widget_contact
+        ul
+            li
+                display: flex
+                &:not(:last-child)
+                    margin-bottom: 11px
+                > i
+                    flex: none
+                    margin-right: 10px
+                    +circle(#662f6c, 50px)
+    ~ .footer-bottom
+        p
+            margin-bottom: 5px
+            a
+                font-weight: 700
+                color: $primary-color
+                
+/* Footer Four */
+.footer-four
+    .footer-logo
+        +res-bl(sm)
+            margin-top: 0
+.widget_copyright
+    ul
+        flex-wrap: wrap
+        align-items: center
+        display: inline-flex
+        li
+            display: flex
+            font-style: italic
+            margin-bottom: 10px
+            align-items: center
+            color: $heading-color
+            a
+                color: $heading-color
+            &:not(:last-child)
+                margin-right: 15px
+                +res-bl(xs)
+                    margin-right: 10px
+                &:after
+                    content: '|'
+                    font-size: 0.6em
+                    margin-left: 15px
+                    +res-bl(xs)
+                        margin-left: 10px
+    p
+        font-size: 20px
+        font-family: $heading-font
+        a
+            color: var(--light-blue-color)

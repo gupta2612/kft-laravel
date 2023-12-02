@@ -1,0 +1,133 @@
+/*******************************************************/
+/******************* ## Stories Area *******************/
+/*******************************************************/
+.stories-area
+    background-size: cover
+    +res-ab(xl)
+        background-size: 100% 100%
+    
+.story-item
+    margin-bottom: 30px
+    .image
+        img
+            width: 100%
+            border-radius: 30px 30px 0 0
+    .content
+        background: white
+        position: relative
+        padding: 0 40px 30px
+        border-radius: 0 0 30px 30px
+        +res-bl(xs)
+            +gapLR(padding, 25px)
+        .badge
+            font-weight: 400
+            padding: 8px 20px
+            border-radius: 5px
+            font-style: italic
+            font-family: $heading-font
+            background: $primary-color
+            transform: translateY(-16px)
+        h5
+            +res-bl(xs)
+                font-size: 22px
+        .bottom-list
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            li
+                font-size: 15px
+                line-height: 1.1
+                margin-top: 6px
+                font-style: italic
+                &:not(:last-child)
+                    margin-right: 10px
+                    padding-right: 10px
+                    border-right: 2px solid $border-color
+        .details-btn
+            +poRB(0)
+
+/* Campaign */
+.stories-left-content
+    margin-bottom: -200px
+    +res-bl(md)
+        margin-bottom: 55px
+    .theme-btn
+        &:last-child
+            border-radius: 0 0 30px 30px
+            .btn-text
+                &:after
+                    content: ''
+                    +size(100%)
+                    +poLT(0)
+                    z-index: -1
+                    background: rgba(0, 0, 0, 0.08)
+.campaign-content
+    padding: 65px 45px 50px
+    border-radius: 30px 30px 0 0
+    +res-bl(ms)
+        +gapLR(padding, 25px)
+    .section-title
+        p
+            color: $heading-color
+    .cause-price
+        font-size: 16px
+        font-weight: 700
+        color: #222222
+        display: flex
+        margin-bottom: 15px
+        font-family: $heading-font
+        justify-content: space-between
+        b
+            display: block
+            line-height: 1
+            font-size: 18px
+    .progress
+        overflow: inherit
+        border-radius: 20px
+        background-color: rgba(82, 82, 82, .2)
+        .progress-bar
+            position: relative
+            overflow: inherit
+            background-color: $primary-color
+            border-top-left-radius: 20px
+            border-bottom-left-radius: 20px
+            &:after
+                content: ''
+                position: absolute
+                top: 100%
+                right: 0
+                border-bottom: 5px solid transparent
+                border-right: 7px solid $primary-color
+        span
+            font-size: 15px
+            font-weight: 700
+            color: $primary-color
+            transform: translate(-8px, 20px)
+    
+/* Stories Area Two */
+.stories-area-two
+    margin-bottom: -20px
+    +res-ab(lg)
+        background-size: 100% 100%
+        
+/* Priorities Details */
+.priorities-details-content
+    .title
+        font-size: 32px
+.priorities-details-campaign
+    .theme-btn
+        &:last-child
+            border-radius: 0 0 30px 30px
+            .btn-text
+                &:after
+                    content: ''
+                    +size(100%)
+                    +poLT(0)
+                    z-index: -1
+                    background: rgba(0, 0, 0, 0.08)
+            
+/* Stories Page */
+.stories-page-area
+    .story-item
+        .content
+            border: 1px solid $border-color

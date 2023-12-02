@@ -1,0 +1,294 @@
+/*******************************************************/
+/******************* ## Donate Area ********************/
+/*******************************************************/
+.donate-area
+    margin-bottom: -145px
+    transform: translateY(-145px)
+
+.donate-content
+    background: white
+    +flexcenter(center)
+    flex-direction: column
+    border-radius: 50px 0 50px 50px
+    +res-bl(xs)
+        +gapLR(padding, 20px)
+    p
+        +container(330px)
+    
+.donate-image
+    img
+        width: 100%
+        border-radius: 0 50px 50px 50px
+        
+/* Donate Modal */
+.modal-backdrop.show
+    opacity: 0.8
+
+.modal-open
+    .fixed-header .header-upper
+        width: calc(100% - 15px)
+.donatemodal
+    .modal-dialog
+        max-width: 95%
+        width: $container
+        +gapTB(margin, 100px)
+    .modal-content
+        padding: 80px
+        border-radius: 30px
+        +res-bl(md)
+            +gapLR(padding, 50px)
+        +res-bl(sm)
+            +gapLR(padding, 25px)
+    .modal-close
+        +poRT(0)
+        +size(92px)
+        color: black
+        font-size: 40px
+        line-height: 92px
+        text-align: center
+        border-radius: 30px
+        background: $yellow-color
+        transform: translate(50%, -50%)
+        +res-bl(xxl)
+            +size(55px)
+            font-size: 20px
+            line-height: 55px
+            border-radius: 15px
+            transform: translate(20%, -20%)
+        
+/* Popup Cause Item */
+.donate-price,
+.donate-price-text
+    display: block
+    color: $primary-color
+.donate-price
+    line-height: 1
+    font-size: 24px
+    font-weight: 900
+    +res-bl(xs)
+        font-size: 20px
+.donate-price-text
+    font-size: 16px
+    font-weight: 700
+    font-style: italic
+    +res-bl(xs)
+        font-size: 14px
+
+.pp-cause-item
+    z-index: 1
+    position: relative
+    margin-bottom: 30px
+    +res-ab(lg)
+        display: flex
+        align-items: center
+    .image
+        position: relative
+        +gapTB(margin, 20px)
+        max-width: 40%
+        +res-bl(lg)
+            max-width: none
+            margin: 0 20px
+        .category
+            +poRT(20px)
+            font-size: 13px
+            @extend %heading
+            padding: 3px 18px
+            text-transform: uppercase
+            background: $yellow-color
+            &:after
+                content: ''
+                +poLT(20px, 100%)
+                border-top: 10px solid $yellow-color
+                border-right: 13px solid transparent
+        img
+            border-radius: 30px
+    .content
+        padding: 30px
+        +res-bl(xs)
+            +gapLR(padding, 15px)
+        .date
+            display: flex
+            font-size: 15px
+            font-style: italic
+            margin-bottom: 10px
+            align-items: center
+            i
+                font-size: 17px
+                margin-right: 5px
+                color: $primary-color
+        h5
+            +res-ab(ms)
+                font-size: 26px
+            +res-bl(xs)
+                font-size: 22px
+        .price-wrap
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            .left
+                position: relative
+                margin-right: 35px
+                padding-right: 35px
+                +res-bl(ms)
+                    margin-right: 15px
+                    padding-right: 15px
+                &:after
+                    content: ''
+                    +poRT(0, 10%)
+                    +size(1px, 70%)
+                    background: #c3c3c3
+    &:after
+        content: ''
+        +poRB(0)
+        z-index: -1
+        +size(80%, 100%)
+        border-radius: 30px
+        border: 1px solid $border-color
+        +res-bl(lg)
+            +size(100%, 80%)
+        
+.donate-form-wrap
+    position: relative
+    border-radius: 30px
+    background: $lighter-color
+    padding: 85px 130px 100px 230px
+    &:before
+        left: 130px
+        line-height: 1
+        font-size: 65px
+        font-weight: 300
+        content: "\f4c0"
+        position: absolute
+        color: $primary-color
+        font-family: 'Font Awesome 5 Pro'
+    .form-group
+        margin-bottom: 10px
+        input
+            border-radius: 10px
+            &::placeholder
+                font-style: italic
+    +res-bl(xl)
+        padding-left: 130px
+        &:before
+            display: none
+    +res-bl(lg)
+        padding: 55px
+    +res-bl(ms)
+        +gapLR(padding, 25px)
+    +res-bl(xs)
+        +gapLR(padding, 15px)
+    &.style-two
+        border-radius: 0
+        p
+            color: $heading-color
+        .custom-donation-price,
+        .custom-donation-price input,
+        .custom-donation-price .theme-btn,
+        .select-donation-price .radio-item label
+            border-radius: 0
+        .select-donation-price .radio-item 
+            label
+                color: white
+                background: rgba(0, 0, 0, 0.15)
+            input:checked
+                ~ label
+                    background: var(--light-blue-color)
+        .theme-btn
+            .btn-text.hover
+                background: $heading-color
+        &:before
+            color: white
+    
+.select-donation-price
+    display: flex
+    flex-wrap: wrap
+    max-width: 533px
+    +gapLR(margin, -4px)
+    .radio-item
+        flex: 1 1
+        margin: 0 4px 10px
+        position: relative
+        label
+            width: 100%
+            padding: 15px
+            font-size: 16px
+            transition: 0.5s
+            font-weight: 900
+            text-align: center
+            background: #e7e2e8
+            border-radius: 10px
+            color: $heading-color
+        input
+            z-index: -1
+            left: 5px
+            top: 5px
+            position: absolute
+            &:checked
+                ~ label
+                    background: $yellow-color
+                
+.custom-donation-price
+    overflow: hidden
+    max-width: 525px
+    border-radius: 10px
+    +res-ab(md)
+        display: flex
+    input
+        border: none
+        font-size: 16px
+        padding: 20px 40px
+    button
+        flex: none
+        .btn-text
+            +size(100%)
+        +res-bl(md)
+            width: 100%
+            
+.payment-methods
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    
+.form-check
+    &:not(:last-child)
+        margin-right: 25px
+    input
+        +size(26px)
+        padding: 0
+        cursor: pointer
+        position: relative
+        margin-right: 5px
+        border: 3px solid $border-color
+        &:before
+            content: ''
+            opacity: 0
+            +abs-middle()
+            transition: 0.5s
+            +circle($primary-color, 12px)
+        &:focus
+            box-shadow: none
+        &:checked
+            background-image: none
+            background-color: white
+            border-color: $border-color
+            &:before
+                opacity: 1
+    label
+        font-size: 16px
+        font-weight: 900
+        color: $heading-color
+        
+.agree-terms
+    label
+        font-weight: 400
+        text-decoration: underline
+        
+/* Donation Form Area */
+.donate-form-area
+    +overlay(#0d0224, 0.3)
+        
+/* Donation Form Area Two */
+.donate-form-area-two
+    +overlay(var(--light-blue-color), 0.88)
+    &:before
+        mix-blend-mode: multiply

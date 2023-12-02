@@ -1,0 +1,156 @@
+/*******************************************************/
+/******************* ## Page Banner *******************/
+/*******************************************************/
+.page-banner-area
+    +overlay($secondary-color, 0.8)
+.banner-inner
+    flex-wrap: wrap
+    +flexcenter(space-between)
+    .page-title
+        font-size: 40px
+        position: relative
+        +res-bl(sm)
+            font-size: 35px
+        &:after
+            content: ''
+            +poLB(0, -8px)
+            +size(105px, 1px)
+            background: $primary-color
+    .sub-title
+        color: $primary-color
+    .date-author
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        li
+            display: flex
+            font-weight: 700
+            font-style: italic
+            +gapTB(margin, 5px)
+            align-items: center
+            font-family: $heading-font
+            > i,
+            > img
+                flex: none
+                +size(52px)
+                border-radius: 50%
+                margin-right: 15px
+            > i
+                text-align: center
+                line-height: 53px
+                color: $heading-color
+                background: $yellow-color
+            a
+                color: $yellow-color
+            &:not(:last-child)
+                margin-right: 70px
+.breadcrumb
+    padding: 0
+    margin: 15px 0
+    font-weight: 700
+    background: transparent
+    text-transform: capitalize
+    font-family: $heading-font
+    .breadcrumb-item
+        padding: 0
+        +flexcenter(center)
+        i
+            margin-right: 5px
+            color: $yellow-color
+        &.active
+            color: white
+        &+.breadcrumb-item::before
+            +gapLR(margin, 15px)
+            flex: none
+            color: white
+            content: "\f105"
+            font-family: "Font Awesome 5 Pro"
+            
+/* Banner Two */
+.page-banner-two
+    &:after
+        content: ''
+        +poLB(0)
+        z-index: -1
+        +size(100%, 80%)
+        background: linear-gradient(transparent, rgba(8, 33, 81, 0.9))
+    .banner-top
+        width: 100%
+        display: flex
+        justify-content: space-between
+        border-bottom: 1px solid #949494
+        +res-bl(xl)
+            flex-wrap: wrap
+        .section-title
+            +res-ab(xl)
+                max-width: 55%
+            .category
+                font-size: 13px
+                @extend %heading
+                padding: 3px 15px
+                position: relative
+                margin-bottom: 20px
+                display: inline-block
+                background: $yellow-color
+                text-transform: uppercase
+                &:after
+                    content: ''
+                    +poLT(20px, 100%)
+                    border-left: 12px solid $yellow-color
+                    border-bottom: 10px solid transparent
+    .banner-bottom
+        width: 100%
+        +flexcenter(space-between)
+        +res-bl(xl)
+            flex-wrap: wrap
+        .price-progress
+            display: flex
+            align-items: center
+            +res-bl(md)
+                flex-wrap: wrap
+            .price
+                font-size: 36px
+                margin-right: 15px
+                font-family: $heading-font
+            .progress
+                width: 260px
+                margin-right: 25px
+                border-radius: 7px
+                .progress-bar
+                    border-radius: 7px
+                    background: $yellow-color
+            span
+                +gapTB(margin, 15px)
+                &:not(:last-child)
+                    font-size: 16px
+                    margin-top: 25px
+                    font-style: italic
+                    margin-right: 40px
+                
+        .blog-meta
+            li
+                line-height: 1
+                font-size: 17px
+                margin-bottom: 15px
+                &:not(:last-child)
+                    padding-right: 30px
+                    border-right: 1px solid #949494
+                i
+                    color: $yellow-color
+                a
+                    font-weight: 700
+                    
+        .social-style-two
+            align-items: center
+            h5
+                margin-bottom: 15px
+                margin-right: 25px
+                +res-bl(xs)
+                    margin-right: 15px
+            a
+                +size(45px)
+                line-height: 45px
+                margin-bottom: 15px
+                &:not(:hover)
+                    i
+                        color: $heading-color

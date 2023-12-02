@@ -1,0 +1,72 @@
+/*******************************************************/
+/***************** ## Newsletter Area *******************/
+/*******************************************************/
+.newsletter-area
+    margin-top: -25px
+    margin-bottom: -15px
+    +res-bl(xl)
+        background-size: cover
+    .section-title
+        .sub-title
+            font-weight: 700
+            font-style: italic
+            color: $yellow-color
+            
+.newsletter-form
+    display: flex
+    overflow: hidden
+    border-radius: 10px
+    input
+        border-radius: 0
+        +res-ab(lg)
+            padding: 20px 50px
+    .theme-btn
+        flex: none
+        .btn-text
+            height: 100%
+            +res-ab(lg)
+                +gapLR(padding, 50px)
+            span
+                +res-bl(ms)
+                    display: none
+            &.normal
+                color: $primary-color
+                
+/* Newsletter Two */
+.newsletter-content
+    display: flex
+    align-items: center
+    .icon
+        font-size: 90px
+        margin-right: 25px
+        color: $primary-color
+        +res-bl(xs)
+            font-size: 55px
+            margin-right: 20px
+    h5
+        color: white
+        margin-top: 8px
+        line-height: 1.36
+        +res-ab(ms)
+            font-size: 26px
+        +res-bl(xs)
+            font-size: 20px
+            
+.newsletter-form-two
+    +res-ab(xs)
+        display: flex
+    input
+        border-radius: 0
+        margin-right: 15px
+        +res-bl(xs)
+            margin-right: 0
+            margin-bottom: 10px
+        &::placeholder
+            color: #555555
+            font-style: italic
+    button
+        flex: none
+        .btn-text
+            height: 100%
+            &.normal
+                color: white

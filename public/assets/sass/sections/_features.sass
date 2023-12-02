@@ -1,0 +1,163 @@
+/*******************************************************/
+/****************** ## Features Area *******************/
+/*******************************************************/
+.feature-item
+    text-align: center
+    margin-bottom: 30px
+    .image
+        img
+            width: 100%
+    .icon
+        +size(72px)
+        transition: 0.5s
+        line-height: 72px
+        border-radius: 20px
+        margin-bottom: -18px
+        display: inline-block
+        background: $primary-color
+        transform: translateY(-50%)
+    .content
+        h5
+            +res-ab(xs)
+                font-size: 26px
+        p
+            +container(285px)
+        .read-more
+            font-size: 15px
+    &.style-two
+        .image
+            img
+                border-radius: 10px 10px 0 0
+        .content
+            background: white
+            border-radius: 0 0 5px 5px
+            h5
+                font-size: 22px
+            h5, p
+                +container(80%)
+            .read-more
+                display: block
+                padding: 15px
+                background: #f4f4f4
+                border: 5px solid white
+                border-radius: 0 0 5px 5px
+        &:hover
+            .icon
+                background: $secondary-color
+            
+.features-area-three
+    &:before
+        content: ''
+        +poLT(0)
+        z-index: -1
+        +size(100%, calc(100% - 260px))
+        background: url(../images/background/feature-bg.jpg) center/cover
+            
+/* Focused */
+.focused-item
+    overflow: hidden
+    border-radius: 20px
+    margin-bottom: 30px
+    .image
+        img
+            width: 100%
+    .content
+        padding: 0 50px 50px 50px
+        +res-bl(xs)
+            +gapLR(padding, 25px)
+        .read-more
+            font-size: 14px
+        .icon
+            +size(72px)
+            line-height: 72px
+            text-align: center
+            border-radius: 20px
+            margin-bottom: -18px
+            display: inline-block
+            background: $primary-color
+            transform: translateY(-50%)
+        p
+            font-size: 17px
+            margin-bottom: 10px
+        &.bgc-blue
+            background: #214bb2
+        &.bgc-red
+            background: #ef572e
+        &.bgc-light-blue
+            background: #418ade
+        &.bgc-light-purple
+            background: #aaa8f9
+        &.text-white
+            .read-more
+                border-color: white
+    &.left-right
+        +res-ab(md)
+            display: flex
+            .image
+                flex: none
+                width: 50%
+                img
+                    height: 100%
+            .content
+                width: 50%
+                padding-top: 50px
+                position: relative
+                .icon
+                    left: 0
+                    position: absolute
+                    transform: translate(-50%)
+                    
+/* Feature Two */
+.testimonials-area-two
+    .testimonial-content
+        .title
+            color: #d5d5d5
+    .testimonials-two-bg
+        +poLT(0)
+        z-index: -1
+        +size(100%, 80%)
+
+.feature-two-wrap
+    overflow: hidden
+    border-radius: 20px
+
+.feature-two-item
+    height: 100%
+    text-align: center
+    padding: 70px 55px
+    background-size: cover
+    background-position: center
+    +res-bl(xs)
+        padding: 40px 35px
+    .icon
+        margin-bottom: 20px
+    h5
+        margin-bottom: 10px
+        +res-ab(xs)
+            font-size: 26px
+            
+/* Feature Three */
+.feature-three-wrap
+    margin-top: -20px
+    transform: translateY(122px)
+.feature-item-three
+    .image
+        img
+            width: 100%
+    .content
+        transition: 0.5s
+        padding: 30px 15px
+        text-align: center
+        background: #4e87e0
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1)
+        h5
+            margin-bottom: 0
+            a
+                color: white
+            +res-ab(xs)
+                font-size: 26px
+        .read-more
+            font-size: 14px
+    &:hover
+        .content
+            background: #3972cb

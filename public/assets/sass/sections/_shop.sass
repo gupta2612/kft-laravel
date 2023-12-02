@@ -1,0 +1,146 @@
+/*******************************************************/
+/******************** ## Shop Area ********************/
+/*******************************************************/
+.product-item
+    margin-bottom: 50px
+    .image
+        height: 410px
+        +flexcenter(center)
+        border-radius: 20px
+        background: $lighter-color
+        img
+            max-width: 85%
+            max-height: 250px
+    .content
+        +container(295px)
+        margin-top: -90px
+        background: white
+        position: relative
+        padding: 30px 40px
+        border-radius: 20px
+        border: 1px solid $border-color
+        .shop-btns
+            display: flex
+            overflow: hidden
+            text-align: center
+            align-items: center
+            border-radius: 24px
+            flex-direction: column
+            background: $yellow-color
+            +poRB(25px, calc(100% - 25px))
+            button
+                +size(46px)
+                margin: 3px
+                color: white
+                line-height: 38px
+                border-radius: 50%
+                border: 4px solid white
+                background: $primary-color
+            a
+                color: black
+                display: none
+                +size(100%, 46px)
+                line-height: 46px
+                box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1)
+                &:hover
+                    background: #e1c254
+            &:hover
+                a
+                    display: block
+        .ratting
+            margin-bottom: 10px
+        .price
+            font-weight: 900
+            color: $primary-color
+            
+/* Shop Details */
+.shop-thumbs
+    margin-right: -50px
+    .thumb-item
+        margin-right: 20px
+        margin-bottom: 20px
+        
+.shop-previews
+    +res-ab(lg)
+        margin-left: 20px
+    img
+        width: 100%
+    
+.product-details-header
+    padding: 40px 90px
+    background: white
+    border-radius: 20px
+    border: 1px solid $border-color
+    +res-ab(lg)
+        margin-left: -105px
+    +res-bl(ms)
+        +gapLR(padding, 45px)
+    +res-bl(xs)
+        +gapLR(padding, 25px)
+    h4
+        +res-ab(xs)
+            font-size: 40px
+    .price
+        font-size: 22px
+        font-weight: 700
+        color: $primary-color
+        font-family: $heading-font
+    .ratting
+        a
+            color: #333333
+            font-size: 15px
+            margin-left: 10px
+            font-style: italic
+            
+.shop-short-text
+    font-style: italic
+    padding-left: 22px
+    border-left: 13px solid $yellow-color
+    
+.select-wishlist
+    flex-wrap: wrap
+    max-width: 420px
+    +flexcenter(space-between)
+    input
+        width: 110px
+        margin-right: 10px
+        padding: 13px 25px
+        margin-bottom: 10px
+        border-radius: 10px
+        background: $lighter-color
+        
+    a
+        font-size: 16px
+        margin-right: 10px
+        margin-bottom: 10px
+        i
+            margin-right: 5px
+            color: $primary-color
+        b
+            font-style: italic
+            
+.add-to-cart
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    .theme-btn
+        margin-right: 22px
+        margin-bottom: 10px
+    b
+        font-style: italic
+        margin-bottom: 10px
+        color: $heading-color
+        text-transform: uppercase
+
+.select-rating
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    h6
+        margin-bottom: 20px
+    .ratting
+        margin-bottom: 15px
+        i
+            font-size: 12px
+            &.normal
+                color: #b5b5b5

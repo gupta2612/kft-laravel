@@ -1,0 +1,315 @@
+/*******************************************************/
+/******************* ## Causes Area ********************/
+/*******************************************************/
+.cause-item
+    .image
+        overflow: hidden
+        position: relative
+        border-radius: 30px 30px 30px 0
+        img
+            width: 100%
+        .donation-raised
+            display: flex
+            +poLB(40px, 60px)
+            flex-direction: column
+            font-family: $heading-font
+            .price
+                color: white
+                font-size: 26px
+                font-weight: 700
+                margin-bottom: 10px
+            .text
+                line-height: 1
+                font-size: 16px
+                background: black
+                padding: 6px 14px
+                font-style: italic
+                border-radius: 5px
+                color: $heading-color
+                background: $yellow-color
+        &:before
+            +poLB(0)
+            content: ''
+            +size(100%, 60%)
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.65))
+    .content
+        background: white
+        padding: 30px 40px
+        margin-right: 40px
+        transform: translateY(-35px)
+        border: 1px solid $border-color
+        border-radius: 0 30px 30px 30px
+        +res-bl(lg)
+            +gapLR(padding, 25px)
+        +res-bl(xs)
+            margin-right: 15px
+        h5
+            margin-bottom: 5px
+            +res-bl(xs)
+                font-size: 20px
+                line-height: 1.4
+        .location
+            font-size: 15px
+            font-style: italic
+        
+.goal-price
+    display: block
+    font-size: 15px
+    font-weight: bold
+    font-style: italic
+    margin-bottom: 5px
+    color: $primary-color
+    i
+        font-size: 14px
+        
+.more-btn-with-text
+    a
+        color: $primary-color
+        text-decoration: underline
+        
+/* Cause Item Two */
+.cause-item-two
+    margin-bottom: 30px
+    .image
+        img
+            width: 100%
+            border-radius: 10px 10px 0 0
+    .content
+        padding: 40px
+        position: relative
+        border-left: 3px solid $lighter-color
+        border-right: 3px solid $lighter-color
+        +res-bl(xs)
+            +gapLR(padding, 25px)
+        .category
+            +poRT(20px, -18px)
+            font-size: 13px
+            @extend %heading
+            padding: 3px 30px
+            background: $yellow-color
+            text-transform: uppercase
+            &:after
+                content: ''
+                +poLT(20px, 100%)
+                border-left: 12px solid $yellow-color
+                border-bottom: 10px solid transparent
+        .price
+            display: block
+            font-size: 16px
+            font-weight: 700
+            font-style: italic
+            margin-bottom: 8px
+            span
+                color: $primary-color
+        h5
+            margin-bottom: 38px
+            +res-bl(xs)
+                font-size: 22px
+        .progress
+            height: 8px
+            overflow: initial
+            border-radius: 4px
+            background: rgb(220, 220, 220)
+            .progress-bar
+                overflow: initial
+                position: relative
+                border-radius: 4px
+                background: $primary-color
+                span
+                    +poRT(0, 50%)
+                    font-size: 13px
+                    font-weight: 700
+                    border: 4px solid white
+                    +circle($primary-color, 46px)
+                    transform: translate(50%, -50%)
+                    line-height: 38px
+    .cause-footer
+        display: flex
+        flex-wrap: wrap
+        padding: 12px 40px
+        align-items: center
+        background: $lighter-color
+        border-radius: 0 0 10px 10px
+        +res-bl(xs)
+            +gapLR(padding, 25px)
+        li
+            display: flex
+            font-size: 15px
+            font-style: italic
+            align-items: center
+            &:not(:last-child)
+                margin-right: 28px
+            i
+                font-size: 18px
+                margin-right: 5px
+                color: $primary-color
+                
+/* Cause Item Three */
+.cause-item-three
+    display: flex
+    z-index: 1
+    position: relative
+    align-items: center
+    margin-bottom: 30px
+    +res-bl(lg)
+        flex-wrap: wrap
+    .content
+        padding: 45px 50px
+        +res-bl(lg)
+            order: 2
+        +res-bl(ms)
+            +gapLR(padding, 25px)
+        h5
+            line-height: 1.4
+            +res-ab(xs)
+                font-size: 26px
+        .goal-donation
+            display: flex
+            flex-wrap: wrap
+            margin-top: 20px
+            align-items: center
+            .left
+                margin-top: 20px
+                margin-right: 50px
+                +res-bl(ms)
+                    margin-right: 20px
+            .theme-btn
+                margin-top: 15px
+                .btn-text
+                    font-size: 16px
+                    padding: 12px 30px
+    .image
+        flex: none
+        max-width: 90%
+        position: relative
+        +res-ab(lg)
+            +gapTB(margin, 20px)
+            width: calc(50% - 15px)
+        img
+            width: 100%
+            border-radius: 10px
+        .rised-donation
+            +poLB(50px)
+            +res-bl(ms)
+                left: 25px
+                bottom: 25px
+            span
+                color: white
+        .category
+            +poLT(25px)
+            color: white
+            font-size: 13px
+            font-weight: 700
+            padding: 3px 18px
+            text-transform: uppercase
+            font-family: $heading-font
+            background: $secondary-color
+            &:after
+                content: ''
+                +poLT(20px, 100%)
+                border-top: 10px solid $secondary-color
+                border-right: 13px solid transparent
+    &:before
+        content: ''
+        +poRB(0)
+        z-index: -1
+        +size(70%, 100%)
+        background: white
+        border-radius: 10px
+        +res-bl(lg)
+            +size(100%, 80%)
+    &.content-left
+        &:before
+            left: 0
+    &.style-two
+        .image
+            +res-bt(lg, xl)
+                max-width: 38%
+            img
+                border-radius: 25px
+            .category
+                left: auto
+                right: 25px
+                color: $heading-color
+                background: $yellow-color
+                &:after
+                    border-top-color: $yellow-color
+        .content
+            +res-ab(ms)
+                +gapLR(padding, 30px)
+            +res-bl(xl)
+                +gapTB(padding, 30px)
+            p
+                font-size: 17px
+        &:before
+            border-radius: 25px
+            border: 1px solid $border-color
+        
+/* Cause Item Four */
+.cause-item-four
+    margin-bottom: 30px
+    .image
+        img
+            width: 100%
+    .content
+        padding: 35px 40px
+        background: #f6f4fd
+        +res-bl(xs)
+            +gapLR(padding, 25px)
+        .category
+            font-size: 13px
+            font-weight: 700
+            margin-bottom: 4px
+            display: inline-block
+            color: $primary-color
+            text-transform: uppercase
+        .price
+            display: block
+            font-size: 16px
+            margin-top: 18px
+            margin-bottom: 8px
+            span
+                font-size: 28px
+                font-weight: 700
+                margin-right: 5px
+                font-family: $heading-font-two
+                color: var(--light-blue-color)
+        .progress
+            height: 14px
+            background: white
+            border-radius: 7px
+            margin-bottom: 15px
+            box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.05)
+            .progress-bar
+                border-radius: 7px
+                background: $primary-color
+        .cause-footer
+            font-size: 14px
+            font-style: italic
+            +flexcenter(space-between)
+            i
+                font-size: 16px
+                margin-right: 4px
+                color: var(--light-blue-color)
+                
+/* Causes Page */
+.causes-page-area
+    .cause-item-two
+        .content
+            +res-bt(lg, xl)
+                +gapLR(padding, 25px)
+    .cause-item-four
+        .content
+            .price span,
+            .cause-footer li i
+                color: $primary-color
+            .progress .progress-bar
+                background: $yellow-color
+                
+/* Cause Details */
+.cause-details-content
+    h4
+        font-size: 32px
+        margin-bottom: 18px
+        +res-bl(sm)
+            font-size: 25px

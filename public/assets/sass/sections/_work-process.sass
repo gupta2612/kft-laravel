@@ -1,0 +1,47 @@
+/*******************************************************/
+/**************** ## Work Process Area *****************/
+/*******************************************************/
+.how-we-work
+    margin-bottom: -35px
+    background-size: cover
+    +res-ab(xl)
+        background-size: 100% 100%
+
+.work-process-item
+    display: flex
+    background: white
+    padding: 45px 50px
+    align-items: center
+    border-radius: 30px
+    margin-bottom: 30px
+    +res-bl(ms)
+        padding: 20px 25px
+    .icon
+        flex: none
+        +size(72px)
+        line-height: 72px
+        text-align: center
+        margin-right: 22px
+        border-radius: 20px
+        background: #ff675b
+        &.bg-blue
+            background: #0973ba
+        &.bg-light-blue
+            background: #2eb1eb
+        img
+            max-width: 60%
+        +res-bl(xs)
+            +size(45px)
+            line-height: 40px
+            border-radius: 10px
+    .content
+        h5
+            font-size: 22px
+            max-width: 200px
+            +res-bl(ms)
+                font-size: 18px
+        span
+            +res-bl(ms)
+                font-size: 16px
+                line-height: 1.3
+                display: inline-block

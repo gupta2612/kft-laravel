@@ -1,0 +1,799 @@
+/*******************************************************/
+/******************  ## Common Classes *****************/
+/*******************************************************/
+.page-wrapper
+    position: relative
+    width: 100%
+    margin: 0 auto
+    overflow: hidden
+    min-width: 300px
+    
+.container
+    +res-ab(xl)
+        max-width: $container
+        padding-left: $gutter/2
+        padding-right: $gutter/2
+        &.container-1435
+            max-width: 1465px
+        &.container-1335
+            max-width: 1365px
+        &.container-1000
+            max-width: 1030px
+        
+.container-fluid
+    +res-ab(sm)
+        +gapLR(padding, 25px)
+    +res-ab(xxl)
+        +gapLR(padding, 70px)
+      
+.col-small
+    +res-bl(xs)
+        flex: 0 0 100%
+        max-width: 100%
+.row
+    --bs-gutter-x: 30px
+    
+.no-gap
+    --bs-gutter-x: 0
+    
+@for $i from 1 through 10
+    .gap-#{10 * $i}
+        +res-ab(xxl)
+            --bs-gutter-x: #{10px * $i}
+        
+.row-cols-xl-7
+    > *
+        +res-ab(xl)
+            width: 14.2857%
+            flex: 0 0 auto
+    
+/** Section Title style **/
+.section-title
+    z-index: 1
+    margin-top: -7px
+    position: relative
+    .sub-title
+        display: inline-block
+        color: $primary-color
+        font-family: $heading-font
+        &.style-two
+            font-weight: 700
+            padding: 5px 33px 20px 0
+            background-size: 100% 100%
+    h2, h3, h4
+        span
+            color: $primary-color
+            &.bgs-100
+                padding: 8px 10px 15px
+    h2
+        span
+        +res-bl(md)
+            font-size: 45px
+        +res-bl(ms)
+            font-size: 35px
+            line-height: 1.3
+    h3
+        span
+        +res-bl(md)
+            font-size: 35px
+        +res-bl(ms)
+            font-size: 30px
+    h4
+        +res-bl(ms)
+            font-size: 30px
+        span
+            +res-bl(sm)
+                font-size: 30px
+    .line
+        +size(35px, 1px)
+        display: inline-block
+        background: $primary-color
+        transform: translateY(-15px)
+    .drops
+        z-index: -1
+        +poLT(50%, 0)
+        transform: translate(-50%, 5px)
+    &.style-two
+        .sub-title
+            font-weight: 700
+            padding-left: 18px
+            position: relative
+            +res-ab(xs)
+                font-size: 20px
+            &:before
+                content: ''
+                +poLT(0, 50%)
+                background: $primary-color
+                transform: translateY(-50%)
+                +size(6px, calc(100% - 12px))
+        &.text-center
+            .sub-title
+                padding-left: 0
+                &:before
+                    display: none
+    &.style-three
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        .title
+            margin-right: 15px
+            .drops
+                top: -10px
+                max-width: 65px
+                left: calc(100% - 35px)
+        .text
+            display: flex
+            flex-direction: column
+            .line
+                transform: translateY(0)
+   
+/** Button style **/
+.theme-btn,
+a.theme-btn
+    overflow: hidden
+    position: relative
+    display: inline-block
+    .btn-text
+        z-index: 1
+        cursor: pointer
+        transition: 0.5s
+        font-weight: 700
+        text-align: center
+        padding: 15px 38px
+        align-items: center
+        display: inline-flex
+        justify-content: center
+        font-family: $heading-font    
+        text-transform: capitalize
+        i
+            margin-right: 7px
+        &.normal
+            color: white
+            background: $primary-color
+        &.hover
+            z-index: 2
+            +poLT(0, 100%)
+            color: $heading-color
+            background: $yellow-color
+            i
+                color: $heading-color
+        +res-bl(sm)
+            padding: 12px 25px
+    &:hover
+        .btn-text
+            &.normal
+                transform: translateY(-100%)
+            &.hover
+                top: 0
+    &.w-100
+        .btn-text
+            width: 100%
+    &.style-two
+        border: 2px solid white
+        .btn-text
+            +gapTB(padding, 13px)
+    &.style-three
+        .btn-text
+            &.normal
+                color: $heading-color
+                background: $yellow-color
+                i
+                    color: $heading-color
+            &.hover
+                background: $primary-color
+    &.style-four
+        border: 2px solid $secondary-color
+        .btn-text
+            +gapTB(padding, 13px)
+            &.normal
+                background: transparent
+    &.style-five .btn-text.normal
+        background: #969494
+
+/* Details Btn */
+.details-btn
+    +size(62px)
+    font-size: 20px
+    line-height: 62px
+    text-align: center
+    color: $heading-color
+    border-radius: 30px 0
+    display: inline-block
+    background: $yellow-color
+    +res-bl(ms)
+        +size(50px)
+        font-size: 16px
+        line-height: 50px
+
+/* Read More */
+.read-more
+    line-height: 1
+    font-weight: 700
+    font-style: italic
+    align-items: center
+    display: inline-flex
+    color: $primary-color
+    font-family: $heading-font
+    text-transform: uppercase
+    border-bottom: 1px solid $primary-color
+    i
+        margin-left: 7px
+        transition: 0.5s
+    &:hover
+        i
+            margin-left: 10px
+    &.style-two
+        font-style: normal
+        border-bottom: none
+        text-decoration: underline
+        text-transform: capitalize
+        i
+            float: left
+            margin: 0 7px 0 0
+        &:hover
+            i
+                margin-right: 10px
+      
+/* List style One */
+.list-style-one
+    li
+        display: flex
+        font-weight: 500
+        color: $heading-color
+        &:not(:last-child)
+            margin-bottom: 8px
+        &:before
+            flex: none
+            +size(20px)
+            font-size: 11px
+            margin-top: 6px
+            content: "\f00c"
+            font-weight: 600
+            line-height: 16px
+            border: 2px solid
+            text-align: center
+            margin-right: 12px
+            border-radius: 50%
+            color: $secondary-color
+            font-family: 'Font Awesome 5 Pro'
+        
+/* List style Two */
+.list-style-two
+    li
+        &:not(:last-child)
+            margin-bottom: 8px
+        a
+            position: relative
+            &:before
+                content: "\f101"
+                position: absolute
+                left: 0
+                opacity: 0
+                transition: 0.5s
+                font-family: "Font Awesome 5 Pro"
+            &:hover
+                padding-left: 20px
+                text-decoration: underline
+                &:before
+                    opacity: 1
+            
+/* List style Three */
+.list-style-three
+    li
+        &:not(:last-child)
+            margin-bottom: 4px
+        &:before
+            content: "\f101"
+            margin-right: 10px
+            font-family: 'Font Awesome 5 Pro'
+        
+/* List style Four */
+.list-style-four
+    li
+        margin-left: 10px
+        &:not(:last-child)
+            margin-bottom: 5px
+        &:before
+            content: "\f00c"
+            font-weight: 700
+            margin-right: 10px
+            color: $primary-color
+            font-family: 'Font Awesome 5 Pro'
+        
+/** Social Link One **/
+.social-style-one
+    flex-wrap: wrap
+    display: inline-flex
+    +gapLR(margin, -1px)
+    a
+        +size(40px)
+        color: white
+        line-height: 40px
+        border-radius: 5px
+        text-align: center
+        +gapLR(margin, 1px)
+        background: rgba(0, 44, 91, 0.1)
+        &:hover
+            color: $heading-color
+            background: $yellow-color
+        &.facebook
+            background: #757dcf
+        &.twitter
+            background: #688de9
+        &.google
+            background: #e52020
+        &.linkedin
+            background: #0073b2
+        
+/** Social Link Two **/
+.social-style-two
+    flex-wrap: wrap
+    display: inline-flex
+    +gapLR(margin, -2.5px)
+    a
+        opacity: 1
+        margin-bottom: 5px
+        +circle(white, 60px)
+        +gapLR(margin, 2.5px)
+        color: $heading-color
+        +res-bl(xs)
+            +size(50px)
+            line-height: 50px
+        &:hover
+            color: white
+            background: $primary-color
+        
+/** Social Link Three **/
+.social-style-three
+    flex-wrap: wrap
+    display: inline-flex
+    +gapLR(margin, -7.5px)
+    a
+        +gapLR(margin, 7.5px)
+        &:hover
+            color: $secondary-color
+        
+/** Social Link Four **/
+.social-style-four
+    flex-wrap: wrap
+    display: inline-flex
+    +gapLR(margin, -5px)
+    a
+        color: white
+        +gapLR(margin, 5px)
+        margin-bottom: 10px
+        +circle($primary-color, 35px)
+        &.facebook
+            background: #006aff
+        &.tumblr
+            background: #3d5a70
+        &.behance
+            background: #000000
+        &:hover
+            background: $secondary-color
+        
+/** Tab Style One **/
+.tab-style-one
+    border-bottom: 1px solid $border-color
+    .nav-link
+        font-size: 18px
+        border-radius: 0
+        @extend %heading
+        +gapLR(padding, 0)
+        margin-bottom: -1px
+        background: transparent
+        border-bottom: 2px solid transparent
+        +res-ab(xl)
+            padding-bottom: 25px
+        +res-bl(sm)
+            font-size: 16px
+        &.active
+            color: $secondary-color
+            border-bottom-color: $secondary-color
+    .nav-item
+        &:not(:last-child)
+            margin-right: 40px
+            +res-bl(md)
+                margin-right: 20px
+        
+/*** Preloader style ** */
+.preloader
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: 9999999
+    +flexcenter(center)
+    background-color: #FFFFFF
+    background-repeat: no-repeat
+    background-position: center center
+    background-image: url(../images/preloader.gif)
+
+/* Pagination */    
+.pagination
+    padding: 20px 40px
+    border-radius: 20px
+    align-items: center
+    display: inline-flex
+    background: $yellow-color
+    +res-bl(sm)
+        +gapLR(padding, 25px)
+    li
+        .page-link
+            padding: 0
+            +size(50px)
+            border: none
+            font-size: 16px
+            box-shadow: none
+            @extend %heading
+            line-height: 50px
+            background: white
+            text-align: center
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08)
+            +res-bl(sm)
+                +size(40px)
+                line-height: 40px
+        .next,
+        .prev
+            @extend %heading
+        .next
+            margin-left: 20px
+        .prev
+            margin-right: 20px
+        .dots
+            +gapLR(margin, 15px)
+        &.disabled,
+        &:last-child
+            .page-link
+                border-radius: 0
+        &:hover:not(.disabled)
+            .page-link
+                background: $lighter-color
+        &.active
+            .page-link
+                color: white
+                background: $primary-color
+                &:hover
+                    background: $primary-color
+        
+/* Rating */
+.ratting
+    line-height: 1
+    align-items: center
+    display: inline-flex
+    i
+        color: #f1b000
+        font-size: 14px
+        margin-right: 3px
+                
+/*** Slick Dots ***/
+.slick-arrow
+    +size(60px)
+    font-size: 22px
+    transition: 0.5s
+    background: white
+    border-radius: 50%
+    color: $heading-color
+    box-shadow: $box-shadow
+    &:focus,
+    &:hover
+        background: $primary-color
+    
+.slider-arrow
+    .slick-arrow
+        border: 1px solid $border-color
+        &:not(:last-child)
+            margin-right: 5px
+        &:focus,
+        &:hover
+            color: white
+            background: $secondary-color
+            border-color: $secondary-color
+                
+/*** Slick Dots ***/
+.slick-dots
+    flex-wrap: wrap
+    margin-top: 20px
+    +flexcenter(center)
+    li
+        position: relative
+        cursor: pointer
+        +size(10px)
+        transition: 0.5s
+        margin: 10px 5px 0
+        border-radius: 50%
+        background: transparent
+        border: 2px solid $secondary-color
+        button
+            opacity: 0
+        &.slick-active
+            background: $secondary-color
+
+/*** Scroll Top style ***/
+.scroll-top
+    position: fixed
+    bottom: 25px
+    right: 0
+    +size(40px)
+    z-index: 99
+    color: white
+    display: none
+    font-size: 14px
+    cursor: pointer
+    line-height: 40px
+    border-radius: 5px
+    background: $primary-color
+    animation: pulse 2s infinite
+  
+/* Text White */
+.text-white
+    *, a,
+    .sub-title,
+    .read-more,
+    .list-style-one li,
+    .list-style-one li:before,
+    .counter-text-wrap .count-text,
+    .hotline .content a:not(:hover)
+        color: white
+    .service-two-item
+        .icon
+            i
+                color: $primary-color
+        .content
+            p
+                opacity: 0.6
+    .hotline > i
+        background: white
+    .hotline > i
+        border-color: white
+        
+/* Wave Shapes */
+.wave-shapes
+    position: absolute
+    z-index: -1
+    top: 0
+    left: -100px
+    +size(calc(100% + 100px), 100%)
+    .shape
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 100%
+        animation: leftRightOne 6s infinite
+        &.two
+            animation-delay: 3s
+        
+/*Project Filter*/
+.filter-btns-one
+    display: flex
+    flex-wrap: wrap
+    +gapLR(margin, -5px)
+    li
+        cursor: pointer
+        transition: 0.5s
+        font-weight: 500
+        padding: 4px 20px
+        border-radius: 5px
+        margin: 0 5px 10px
+        color: $heading-color
+        +res-bl(xs)
+            +gapLR(padding, 15px)
+        &.current
+            background: white
+            color: $secondary-color
+            text-decoration: underline
+            box-shadow: 10px 0 60px rgba(195, 195, 195, 0.5)
+            
+.filter-btns-two
+    display: flex
+    flex-wrap: wrap
+    font-weight: 500
+    +gapLR(margin, -18px)
+    +res-ab(md)
+        font-size: 18px
+    +res-bl(sm)
+        +gapLR(margin, -8px)
+    li
+        cursor: pointer
+        transition: 0.5s
+        margin: 0 18px 10px
+        border-bottom: 3px solid transparent
+        +res-bl(sm)
+            +gapLR(margin, 8px)
+        &.current
+            color: $primary-color
+            border-color: $primary-color
+
+/* Position */
+.rel
+    position: relative
+    
+@for $i from 0 through 5
+    .z-#{0 + $i}
+        z-index: 0 + $i
+    
+.overlay
+    +overlay($heading-color, 0.75)
+    
+/* Backgruond Size */
+.bgs-cover
+    background-size: cover
+    background-position: center
+.bgs-100
+    background-size: 100% 100%
+    
+/* Color + Background */
+.color-primary
+    color: $primary-color
+.bgc-black
+    background-color: $heading-color
+.bgc-primary
+    background-color: $primary-color
+.bgc-secondary
+    background-color: $secondary-color
+.bgc-yellow
+    background-color: $yellow-color
+.bgc-lighter
+    background-color: $lighter-color
+.color-secondary
+    color: $secondary-color
+.bgc-black-with-lighting
+    background: #1e1e22
+    &:after,
+    &:before
+        position: absolute
+        +size(450px)
+        z-index: -1
+        content: ''
+        border-radius: 50%
+        background: $secondary-color
+        animation: zoomInOut 5s infinite
+    &:after
+        right: -8%
+        top: -15%
+        filter: blur(110px)
+    &:before
+        left: -10%
+        top: 20%
+        filter: blur(350px)
+        animation-delay: 2.5s
+    
+/* Border Radius */
+@for $i from 1 through 10
+    .br-#{5 * $i}
+        border-radius: 5px * $i
+    
+/* Home Two */
+.home-two
+    --primary-color: #0f854a
+    .theme-btn
+        &.style-three
+            .btn-text
+                &.hover
+                    color: white
+                    i
+                        color: white
+    .section-title
+        h2
+            span
+                display: inline-block
+                padding: 0 30px 10px 20px
+                background: url(../images/background/section-title.png)
+                background-size: 100% 100%
+    
+/* Home Three */
+.home-three
+    --yellow-color: #e31937
+    --secondary-color: #2b4eff
+    .theme-btn
+        --primary-color: #2b4eff
+        --secondary-color: #e31937
+        .btn-text
+            &.hover
+                color: white
+                i
+                    color: white
+        &.style-three
+            .btn-text
+                &.normal
+                    color: white
+                
+    .section-title
+        .sub-title
+            font-weight: 700
+            padding-left: 18px
+            position: relative
+            +res-ab(xs)
+                font-size: 20px
+            &:before
+                content: ''
+                +poLT(0, 50%)
+                background: $primary-color
+                transform: translateY(-50%)
+                +size(6px, calc(100% - 12px))
+        h1, h2, h3, h4
+            span
+                font-weight: 400
+                font-family: $script-font
+                
+    .text-center
+        .sub-title
+            padding-left: 0
+            &:before
+                display: none
+                
+    .donatemodal .modal-close,
+    .pp-cause-item .image .category,
+    .select-donation-price .radio-item input:checked ~ label
+        color: white
+    .text-white
+        h1, h2
+            span
+                color: white
+        &.section-title
+            p
+                color: #d0d0d0
+    .donate-form-wrap
+        background: #f9f9f9
+        border-radius: 10px
+        .custom-donation-price input
+            background: $lighter-color
+        &:before
+            color: $secondary-color
+    .select-donation-price .radio-item input:checked ~ label
+        background: $secondary-color
+    .blog-three-item .content .blog-meta
+        a, i
+            color: $secondary-color
+        
+/* Home Four */
+.home-four
+    --primary-color: #abd274
+    --light-blue-color: #4e87e0
+    --yellow-color: var(--light-blue-color)
+    h1, h2, h3, h4, h5, h6
+        font-family: $heading-font-two
+    .theme-btn,
+    a.theme-btn
+        .btn-text
+            color: $heading-color
+            &.hover
+                color: white
+        &.style-three
+            .btn-text
+                color: white
+                i
+                    color: white
+    .section-title
+        .sub-title
+            font-weight: 700
+            color: var(--light-blue-color)
+            padding-left: 18px
+            position: relative
+            +res-ab(xs)
+                font-size: 20px
+            &:before
+                content: ''
+                +poLT(0, 50%)
+                transform: translateY(-50%)
+                +size(6px, calc(100% - 12px))
+                background: var(--light-blue-color)
+        h1, h2, h3, h4
+            span
+                font-weight: 400
+                font-family: $script-font
+                color: var(--light-blue-color)
+        p
+            line-height: 1.8
+            +res-ab(xs)
+                font-size: 20px
+    .text-center
+        .sub-title
+            padding-left: 0
+            color: $primary-color
+            &:before
+                display: none
+    .more-btn-with-text a,
+    .blog-four-item .content .date
+        color: var(--light-blue-color)

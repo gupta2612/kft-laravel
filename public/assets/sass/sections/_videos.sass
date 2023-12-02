@@ -1,0 +1,69 @@
+/*******************************************************/
+/****************** ## Videos Area ********************/
+/*******************************************************/ 
+/* Video Play */
+.video-play
+    color: white
+    font-size: 75px
+    text-align: center
+    border-radius: 30px
+    +size(140px, 135px)
+    line-height: 135px
+    display: inline-block
+    background: $primary-color
+    &:hover
+        color: white
+    +res-bl(md)
+        +size(80px, 75px)
+        font-size: 22px
+        line-height: 75px
+        border-radius: 15px
+
+/* Video Area */
+.video-section-bg
+    +poRB(0)
+    z-index: -1
+    overflow: hidden
+    +size(65%, 100%)
+    background-size: cover
+    border-radius: 50px 0 0 50px
+    background-position: center center
+    +res-bl(lg)
+        +size(110%, 65%)
+    &:before
+        content: ''
+        +size(100%)
+        +poLT(0)
+        opacity: 0.4
+        background: #07040b
+    
+.video-left-part
+    padding: 100px 100px 100px 0
+    +res-bl(xl)
+        padding-right: 70px
+    +res-bl(lg)
+        margin-right: 50px
+    +res-bl(sm)
+        margin-right: 0
+        padding-right: 35px
+    .section-title
+        max-width: 500px
+    &:after
+        content: ''
+        +poRT(0)
+        z-index: -1
+        border-radius: 50px
+        background: $yellow-color
+        +size(calc(100% + 100px), 100%)
+    .video-play
+        +poRT(0, 115px)
+        transform: translate(50%)
+        +res-bl(sm)
+            top: auto
+            bottom: 15px
+            transform: translate(-15px)
+        
+.video-right-part
+    max-width: 375px
+    +res-ab(lg)
+        margin-left: 65px

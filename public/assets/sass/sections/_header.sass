@@ -1,0 +1,415 @@
+/*******************************************************/
+/******************* ## Header style ******************/
+/*******************************************************/
+.main-header
+    position: relative
+    left: 0px
+    top: 0px
+    z-index: 999
+    width: 100%
+    transition: all 500ms ease
+    .header-upper
+        z-index: 4
+        width: 100%
+        position: relative
+    .logo-outer
+        flex: none
+        +res-bl(lg)
+            display: none
+    .logo
+        z-index: 9
+        padding: 2px 0
+        position: relative
+    &.menu-absolute
+        .header-upper
+            position: absolute
+    &.fixed-header
+        .header-upper
+            top: 0
+            left: 0
+            position: fixed
+            animation: sticky  1s
+            box-shadow: 0px 0px 30px 0px rgba(87, 95, 245, .10)
+        .main-menu
+            .navbar-collapse
+                > ul
+                    > li
+                        +res-ab(lg)
+                            +gapTB(padding, 25px)
+
+.header-top
+    color: #222222
+    font-size: 15px
+    +flexcenter(space-between)
+    font-family: $heading-font
+    +res-bl(lg)
+        flex-wrap: wrap
+        justify-content: center
+    > ul
+        display: flex
+        align-items: center
+        &:not(:last-child)
+            +res-bl(ms)
+                display: none
+        > li
+            display: flex
+            margin-bottom: 5px
+            align-items: center
+            &:not(:last-child)
+                margin-right: 40px
+                +res-bl(ms)
+                    margin-right: 15px
+            i
+                font-size: 18px
+                margin-right: 8px
+                color: $primary-color
+                +res-bl(xs)
+                    display: none
+            a
+                align-items: center
+                display: inline-flex
+                &:not(:hover)
+                    color: #222222
+    
+.nav-outer
+    +res-bl(lg)
+        width: 100%
+ 
+/** Header Main Menu **/
+.main-menu
+    +res-bl(lg)
+        width: 100%
+    .mobile-logo
+        margin-right: auto
+        +res-bl(sm)
+            max-width: 150px
+    .collapse
+        +res-bl(lg)
+            overflow: auto
+    .navbar-collapse
+        padding: 0px
+        > ul
+            display: flex
+            +res-bl(lg)
+                display: block
+                padding: 25px 0
+                background: #FFFFFF
+                border-radius: 20px
+                box-shadow: inset 0px 0px 30px 0px rgba(87, 95, 245, 0.1)
+                > li:last-child
+                    border-bottom: 1px solid #f3f3f3
+        +res-bl(lg)
+            left: 0
+            width: 100%
+            position: absolute
+            max-height: calc(100vh - 80px)
+        li
+            padding: 35px 16px
+            +flexcenter(space-between)
+            +res-bl(xxl)
+                +gapLR(padding, 10px)
+            +res-bl(lg)
+                display: block
+                padding: 0 15px
+                border-top: 1px solid #f3f3f3
+            &.dropdown .dropdown-btn
+                cursor: pointer
+                font-size: 12px
+                margin-left: 5px
+                color: $heading-color
+                +res-bl(lg)
+                    position: absolute
+                    right: 10px
+                    top: 0
+                    width: 50px
+                    height: 43px
+                    border-left: 1px solid #f2f2f2
+                    text-align: center
+                    line-height: 43px
+            a
+                display: block
+                opacity: 1
+                font-weight: 600
+                position: relative
+                color: $heading-color
+                font-family: $heading-font
+                text-transform: capitalize
+                transition: all 500ms ease
+                +res-ab(xs)
+                    font-size: 18px
+                +res-bl(lg)
+                    padding: 10px 10px
+                    line-height: 22px
+                &:hover
+                    color: $primary-color
+                    text-decoration: underline
+            &.current > a, &.current-menu-item > a
+                font-weight: 500
+            li
+                border-top: 1px solid #f3f3f3
+                a
+                    text-transform: capitalize
+                    &:before
+                        display: none
+            .megamenu
+                position: absolute
+                left: 0px
+                top: 100%
+                width: 100%
+                z-index: 100
+                display: none
+                padding: 20px 0
+                background: #ffffff
+                box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.05), -2px 0px 5px 1px rgba(0, 0, 0, 0.05)
+                +clearfix
+                +res-bl(lg)
+                    position: relative
+                    box-shadow: none
+                    width: 100%
+                    .container
+                        max-width: 100%
+                    .row
+                        margin: 0px
+                ul
+                    display: block
+                    position: relative
+                    top: 0
+                    width: 100%
+                    box-shadow: none
+            ul
+                position: absolute
+                left: inherit
+                top: 100%
+                min-width: 250px
+                z-index: 100
+                display: none
+                background: #ffffff
+                box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.05), -2px 0px 5px 1px rgba(0, 0, 0, 0.05)
+                +res-bl(lg)
+                    position: relative
+                    display: none
+                    width: 100%
+                    box-shadow: none
+                    +clearfix
+                    +res-bl(xs)
+                        min-width: auto
+                li
+                    width: 100%
+                    padding: 7px 20px
+                    +res-bl(lg)
+                        padding: 0 15px
+                    ul
+                        left: 100%
+                        top: 0%
+                        +res-bl(lg)
+                            left: auto
+
+    .navbar-header
+        display: none
+        +res-bl(lg)
+            +flexcenter(start)
+        .navbar-toggle
+            float: right
+            padding: 4px 0
+            cursor: pointer
+            background: transparent
+            .icon-bar
+                background: $base-color
+                height: 2px
+                width: 30px
+                display: block
+                margin: 7px 0
+
+/* Menu Btns */
+.menu-btns
+    display: flex
+    align-items: center
+    .theme-btn
+        margin-left: 30px
+        +res-bl(xl)
+            display: none
+    button
+        font-size: 22px
+        color: $base-color
+        margin-left: 25px
+        position: relative
+        background: transparent
+        span
+            color: white
+            @extend %heading
+            font-size: 13px
+            +poRT(-10px, -5px)
+            +circle($primary-color, 18px)
+        
+/* Menu White */
+.main-header.menu-white
+    .header-top > ul
+        > li
+            color: white
+            a
+                color: white
+                i
+                    color: $yellow-color
+    .menu-btns button,
+    .nav-search > button
+        color: white
+    .main-menu .navigation > li > a,
+    .main-menu .navigation > .dropdown > .dropdown-btn
+        +res-ab(lg)
+            color: white
+    .main-menu .navigation li li a:hover
+        color: $primary-color
+    .menu-sidebar button .icon-bar,
+    .main-menu .navbar-toggle .icon-bar
+            background: white
+    .menu-btns button
+        span
+            color: $primary-color
+            background: $yellow-color
+        
+/* Header One */
+.main-header.header-one
+    .header-inner
+        background: white
+        padding-left: 75px
+        padding-right: 38px
+        border-radius: 20px
+        margin-top: -50px
+        transform: translateY(50px)
+        +res-bl(xxl)
+            padding-left: 35px
+        +res-bl(lg)
+            margin-top: -33px
+            transform: translateY(33px)
+        +res-bl(ms)
+            +gapLR(padding, 20px)
+            .mobile-logo
+                max-width: 70%
+                
+    .theme-btn
+        height: 100%
+        .btn-text
+            height: 100%
+            
+    &.fixed-header
+        .header-upper
+            box-shadow: none
+            .header-inner
+                box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, .08)
+        
+/* Header Two */
+.main-header.header-two
+    &.fixed-header
+        .header-upper
+            +gapTB(padding, 0)
+            background: $heading-color
+    .top-menu
+        margin-left: 38px
+        +res-ab(lg)
+            margin-right: auto
+    .theme-btn
+        &.style-three
+            .btn-text
+                &.normal
+                    color: $primary-color
+                    i
+                        color: $primary-color
+        
+/* Header Three */
+.main-header.header-three
+    &.fixed-header
+        .header-upper
+            +gapTB(padding, 0)
+            background: $heading-color
+    .top-menu
+        margin-left: 38px
+        +res-ab(lg)
+            margin-right: auto
+    .theme-btn
+        margin-left: 10px
+    .menu-btns
+        +res-ab(xxl)
+            margin-left: 30px
+        button
+            +res-ab(xl)
+                margin-right: 30px
+    &.menu-white
+        .menu-btns
+            button
+                span
+                    color: white
+        
+/* Header Four */
+.main-header.header-four
+    .logo-outer
+        +res-ab(lg)
+            display: flex
+            padding: 15px 40px
+            align-items: center
+            background: $secondary-color
+            margin-top: -60px
+    .mobile-logo
+        padding: 15px
+        text-align: center
+        background: $secondary-color
+        img
+            max-width: 80%
+    .header-top
+        +res-ab(lg)
+            padding-left: 285px
+        &:after
+            content: ''
+            +poLT(0)
+            z-index: -1
+            +size(100vw, 100%)
+            background: var(--light-blue-color)
+        .social-style-one
+            margin-right: 20px
+            a
+                &:hover
+                    background: $secondary-color
+        > ul
+            margin-top: 5px
+            > li
+                i
+                    color: white
+        .top-menu
+            margin-left: auto
+            position: relative
+            margin-right: 25px
+            padding-right: 45px
+            +res-bl(md)
+                display: none
+            &:after
+                content: ''
+                +poRT(0, auto)
+                +size(1px, 15px)
+                background: white
+        button
+            font-size: 22px
+            +size(65px, 60px)
+            padding: 5px 15px
+            margin-left: 25px
+            position: relative
+            background: rgba(0, 44, 91, 0.1)
+            +res-bl(lg)
+                +size(55px)
+                font-size: 16px
+            span
+                @extend %heading
+                font-size: 13px
+                position: absolute
+                +circle($primary-color, 18px)
+    .main-menu .navbar-collapse li a
+        text-transform: uppercase
+        font-family: $heading-font-two
+
+    .menu-btns
+        .theme-btn
+            height: 100%
+            .btn-text
+                height: 100%
+                text-transform: uppercase
+    &.fixed-header
+        .logo-outer
+            margin-top: 0

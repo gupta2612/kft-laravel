@@ -1,0 +1,93 @@
+/*******************************************************/
+/**************** ## Testimonials Area *****************/
+/*******************************************************/
+.testimonials-area
+    +res-bl(xl)
+        background-size: cover
+
+.testimonial-image
+    padding: 12px
+    border-radius: 50%
+    border: 3px dotted white
+    +res-bl(md)
+        margin-bottom: 45px
+    img
+        width: 100%
+        border-radius: 50%
+.testimonial-content
+    .section-title
+        .drops
+            opacity: 0.3
+    > p
+        color: white
+        line-height: 1.55
+        font-style: italic
+        +res-ab(xs)
+            font-size: 26px
+    .title
+        display: block
+        font-weight: 700
+        line-height: 1.55
+        color: $yellow-color
+        font-family: $heading-font
+        +res-ab(xs)
+            font-size: 20px
+            
+/* Testimonial Three */
+.testimonials-three-bg
+    overflow: hidden
+    +poRT(0)
+    z-index: -1
+    +size(70%, 100%)
+    +res-bl(lg)
+        width: 100%
+    &:after
+        content: ''
+        +poLT(0)
+        +size(100%)
+        opacity: 0.6
+        background: #002c5b
+    &.style-two
+        left: 0
+    
+.testimonial-three-left
+    +res-bl(ms)
+        +gapLR(padding, 25px)
+    h4
+        +res-ab(xl)
+            font-size: 40px
+    a.theme-btn
+        .btn-text
+            color: white
+            i
+                color: white
+            &.hover
+                background: $secondary-color
+    
+.testimonial-three-right
+    font-size: 28px
+    line-height: 1.58
+    +res-ab(lb)
+        transform: translate(150px)
+    +res-bl(ms)
+        font-size: 22px
+    .icon
+        font-size: 60px
+        margin-bottom: 15px
+        i
+            color: $primary-color
+    .testi-footer
+        font-size: 0.72em
+        span
+            color: $primary-color
+    &.style-two
+        +res-ab(lb)
+            transform: translate(-150px)
+        .icon i,
+        .testi-footer span
+                color: $yellow-color
+    &.style-three
+        .icon i,
+        .testi-footer span
+                color: $yellow-color
+            

@@ -1,0 +1,190 @@
+/*******************************************************/
+/******************** ## Hero Area ********************/
+/*******************************************************/
+.hero-area
+    +overlay($secondary-color, 1)
+    &:before
+        mix-blend-mode: multiply
+
+.hero-images
+    display: flex
+    flex-wrap: wrap
+    align-items: self-start
+    justify-content: center
+    img
+        width: 59%
+        border-radius: 30px
+        &:nth-child(2)
+            margin-top: 15%
+            margin-left: -20%
+        &:nth-child(3)
+            margin-top: 5%
+    
+.hero-content
+    .h6
+        font-weight: 400
+        +res-ab(xs)
+            font-size: 22px
+    p
+        +res-ab(xs)
+            font-size: 20px
+            
+/* Hero Area Two */
+.hero-area-two
+    +overlay(#0d0224, 0.4)
+    +res-bl(lg)
+        padding-top: 170px
+    &:after
+        content: ''
+        +poLT(0)
+        +size(100%)
+        z-index: -1
+        background: linear-gradient(rgba(0, 0, 0, 0.8), transparent)
+.hero-campaign
+    .campaign-content
+        border-radius: 15px 15px 0 0
+    .theme-btn
+        border-radius: 0 0 10px 10px
+        .btn-text
+            &:after
+                content: ''
+                +size(100%)
+                +poLT(0)
+                z-index: -1
+                background: rgba(0, 0, 0, 0.08)
+            
+.hero-content-two
+    +container(655px)
+    .sub-title
+        font-weight: 700
+        letter-spacing: 5px
+        display: inline-block
+        color: $primary-color
+        padding: 20px 28px 30px
+        text-transform: uppercase
+        background-size: 100% 100%
+        font-family: $heading-font
+        +res-bl(xs)
+            font-size: 15px
+            padding: 10px 20px 20px
+    h1
+        color: white
+        margin-bottom: 25px
+        font-size: $h1-size - 5
+        +res-bl(md)
+            font-size: 50px
+        +res-bl(sm)
+            font-size: 40px
+        +res-bl(xs)
+            font-size: 35px
+    p
+        color: white
+        +res-ab(ms)
+            font-size: 20px
+    ul
+        flex-wrap: wrap
+        padding-top: 10px
+        +flexcenter(center)
+        li 
+            display: flex
+            margin-top: 10px
+            align-items: center
+            a
+                color: white
+                font-weight: 700
+                text-transform: uppercase
+                text-decoration: underline
+                font-family: $heading-font
+                +res-bl(xs)
+                    font-size: 16px
+            &:not(:last-child)
+                &:after
+                    content: ''
+                    +size(8px)
+                    +gapLR(margin, 22px)
+                    background: $yellow-color
+            
+/* Hero Area Three */
+.hero-area-three
+    +res-bl(lg)
+        padding-top: 170px
+    &:after
+        content: ''
+        +poLT(0)
+        z-index: -1
+        +size(100%, 70%)
+        background: linear-gradient(rgba(0, 0, 0, 0.5), transparent)
+    
+.hero-content-three
+    .sub-title
+        font-weight: 700
+        display: inline-block
+        color: $primary-color
+        text-transform: uppercase
+        font-family: $heading-font
+    h2
+        +res-bl(md)
+            font-size: 45px
+        +res-bl(sm)
+            font-size: 35px
+        +res-bl(xs)
+            font-size: 30px
+        span
+            font-weight: 400
+            color: $primary-color
+            font-family: $script-font
+    p
+        line-height: 1.8
+        +res-ab(sm)
+            font-size: 20px
+            
+/* Hero Four */
+.hero-area-four
+    +overlay($secondary-color, 0.3)
+    z-index: 3
+    &:before
+        mix-blend-mode: multiply
+
+.hero-four-content
+    +res-ab(md)
+        display: flex
+    .icon
+        line-height: 1
+        font-size: 175px
+        margin-top: -10px
+        margin-right: 38px
+        margin-bottom: 15px
+        color: $primary-color
+        +res-bl(lg)
+            margin-top: 0
+            font-size: 120px
+        +res-bl(sm)
+            font-size: 80px
+    .content
+        .sub-title
+            display: inline-block
+            font-family: $heading-font-two
+            +res-ab(lg)
+                font-size: 28px
+        h1
+            +res-ab(xxl)
+                font-size: 80px
+            +res-bl(sm)
+                font-size: 55px
+            +res-bl(ms)
+                font-size: 45px
+            +res-bl(xs)
+                font-size: 40px
+        p
+            line-height: 1.75
+            +res-ab(sm)
+                font-size: 22px
+    .hero-btns
+        .theme-btn
+            margin-top: 10px
+            .btn-text
+                text-transform: uppercase
+                +res-ab(sm)
+                    +gapTB(padding, 20px)
+            &:not(:last-child)
+                margin-right: 10px

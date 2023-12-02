@@ -1,0 +1,136 @@
+/*******************************************************/
+/******************* ## Events Area ********************/
+/*******************************************************/
+.event-item
+    z-index: 1
+    position: relative
+    margin-bottom: 30px
+    +res-ab(lg)
+        display: flex
+        align-items: center
+    .content
+        padding: 30px 85px 25px 120px
+        +res-bl(md)
+            padding-right: 22px
+        +res-bl(ms)
+            padding-left: 25px
+        .date
+            width: 95px
+            color: white
+            display: flex
+            text-align: center
+            margin-bottom: 15px
+            flex-direction: column
+            font-family: $heading-font-two
+            background: var(--light-blue-color)
+            +res-ab(ms)
+                +poLT(0, 30px)
+            b
+                font-size: 46px
+                font-weight: 700
+                padding: 22px 5px
+            span
+                font-size: 15px
+                font-weight: 500
+                background: #366abb
+                text-transform: uppercase
+        .admin-heart
+            display: flex
+            font-size: 16px
+            margin-bottom: 8px
+            align-items: center
+            li
+                position: relative
+                i
+                    font-weight: 700
+                    &:first-child
+                        margin-right: 3px
+                        color: var(--light-blue-color)
+                    a
+                        color: #222222
+                &:not(:last-child)
+                    margin-right: 18px
+                    padding-right: 18px
+                    &:after
+                        content: ''
+                        +poRT(0, 50%)
+                        +size(1px, 10px)
+                        background: #787878
+                        transform: translateY(-50%)
+        h5
+            line-height: 1.38
+            margin-bottom: 10px
+            +res-ab(xs)
+                font-size: 26px
+        p
+            font-size: 17px
+    .image
+        flex: none
+        position: relative
+        +res-ab(lg)
+            max-width: 40%
+            +gapTB(margin, 24px)
+        .location
+            font-size: 13px
+            padding: 3px 30px
+            +poLT(-20px, 10px)
+            font-style: italic
+            color: $heading-color
+            background: $primary-color
+            +res-bl(lg)
+                left: 10px
+    &:before
+        content: ''
+        +poLT(4%, 0)
+        z-index: -1
+        +size(86%, 100%)
+        background: #f6f4fd
+        +res-bl(lg)
+            left: 0
+            +size(100%, 80%)
+    &.style-two
+        .content
+            .date
+                background: $primary-color
+                span
+                    background: #c8122d
+        .admin-heart li i:first-child
+            color: $primary-color
+        .image
+            .location
+                background: $yellow-color
+        
+/* Event Details */
+.event-details-content
+    h4
+        +res-bl(sm)
+            font-size: 28px
+.info-item
+    &:not(:last-child)
+        margin-bottom: 25px
+    h6
+        margin-bottom: 5px
+    b
+        font-size: 16px
+        color: $primary-color
+        text-transform: uppercase
+        font-family: $heading-font
+        a
+            color: $primary-color
+            
+.event-location
+    position: relative
+    .event-venu
+        +poLT(30px)
+        font-size: 16px
+        max-width: 300px
+        height: calc(100% - 60px)
+        +res-bl(ms)
+            top: 15px
+            left: 15px
+            padding: 30px
+            +size(calc(100% - 30px))
+    iframe
+        height: 380px
+        border-radius: 30px
+        margin-bottom: -10px

@@ -1,0 +1,37 @@
+/*******************************************************/
+/****************** ## Instagram Area ******************/
+/*******************************************************/
+.instagram-area
+    margin-bottom: -15px
+
+.instagram-item
+    position: relative
+    img
+        width: 100%
+    .plus
+        z-index: 2
+        opacity: 0
+        +size(70px)
+        +abs-middle()
+        font-size: 40px
+        line-height: 70px
+        background: white
+        text-align: center
+        border-radius: 10px
+        color: $primary-color
+    &:after
+        +size(0)
+        +poLT(50%)
+        z-index: 1
+        opacity: 0
+        content: ''
+        border-radius: 10px
+        transition: 0.5s ease-in
+        background: $yellow-color
+        transform: translate(-50%, -50%)
+    &:hover
+        .plus
+            opacity: 1
+        &:after
+            opacity: 0.5
+            +size(calc(100% - 40px))

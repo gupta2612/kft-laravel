@@ -1,0 +1,86 @@
+/*******************************************************/
+/******************* ## About Area ********************/
+/*******************************************************/
+.meter-area
+    background-size: cover
+    +res-ab(xl)
+        background-size: 100% 100%
+    
+.people-number-btn
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    .text
+        margin-right: 55px
+        .h2
+            display: block
+            line-height: 1
+            color: $primary-color
+            small
+                font-size: 0.74em
+            span
+                font-size: 0.48em
+                
+.meter-content
+    padding-left: 70px
+    position: relative
+    +res-bl(xl)
+        padding-left: 30px
+    +res-bl(ms)
+        padding-left: 15px
+    &:before
+        content: ''
+        +size(1px, 80%)
+        +poLT(-20px, 10%)
+        background: #ccc9c9
+        +res-bl(lg)
+            left: 0
+            top: 5px
+            height: 100%
+        
+/* Our Mission */
+.our-mission-area
+    +res-ab(xl)
+        background-size: 100% 100%
+        
+.our-mission-btns
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    a
+        &:not(:last-child)
+            margin-right: 30px
+        
+/* Education */
+.education-content
+    b
+        color: #662f6c
+        font-weight: 400
+        +res-ab(xs)
+            font-size: 20px
+            
+.education-area
+    &:before
+        content: ''
+        +poLB(0)
+        z-index: -1
+        +size(100%, calc(100% + 260px))
+        background: url(../images/background/education-bg.jpg) center/cover
+        
+/* Chance To Learn */
+.learn-content
+    .list-style-three
+        margin-left: 30px
+        li
+            &:before
+                content: '\f00c'
+                color: $primary-color
+        
+/* About Four */
+.about-four-content
+    .list-style-three
+        margin-left: 30px
+        li
+            &:before
+                content: '\f00c'
+                color: $primary-color

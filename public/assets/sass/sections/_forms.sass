@@ -1,0 +1,44 @@
+/*******************************************************/
+/********************** ## Forms ***********************/
+/*******************************************************/
+.contact-form
+    .form-control
+        padding: 20px 35px
+        border-radius: 8px
+        margin-bottom: 10px
+        background: $lighter-color
+        &::placeholder
+            font-style: italic
+    h5
+        +res-ab(xs)
+            font-size: 30px
+            margin-bottom: 0
+            
+.get-in-touch
+    position: relative
+    margin-top: -225px
+    +res-bl(sm)
+        margin-top: -100px
+    +res-bl(xs)
+        +gapLR(padding, 35px)
+    
+/* Location Map */
+.our-location
+    iframe
+        height: 750px
+        +res-bl(xxl)
+            height: 600px
+        +res-bl(lg)
+            height: 500px
+        +res-bl(sm)
+            height: 400px
+        
+/* Contact Form Validation */
+.has-error
+    .with-errors
+        color: red
+        margin-top: 5px
+        margin-bottom: -15px
+#msgSubmit
+    margin-bottom: 0
+    margin-top: 10px

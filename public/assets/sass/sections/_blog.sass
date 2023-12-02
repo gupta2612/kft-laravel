@@ -1,0 +1,330 @@
+/*******************************************************/
+/******************** ## Blog Area ********************/
+/*******************************************************/
+.blog-item
+    margin-bottom: 50px
+    .image
+        img
+            width: 100%
+            border-radius: 30px
+    .content
+        margin-left: auto
+        background: white
+        max-width: 435px
+        position: relative
+        padding: 25px 55px
+        margin-top: -100px
+        border: 1px solid $border-color
+        border-radius: 30px 0 30px 30px
+        +res-bl(ms)
+            max-width: 350px
+            +gapLR(padding, 25px)
+        +res-bl(xs)
+            margin-left: 15px
+        h5
+            +res-bl(xs)
+                font-size: 20px
+        .blog-meta
+            +res-bl(xs)
+                font-size: 13px
+
+.blog-admin
+    display: flex
+    font-size: 15px
+    font-style: italic
+    margin-bottom: 5px
+    align-items: center
+    img
+        +size(40px)
+        margin-right: 5px
+        border-radius: 50%
+            
+.blog-meta
+    display: flex
+    font-size: 15px
+    flex-wrap: wrap
+    font-style: italic
+    align-items: center
+    li
+        display: flex
+        margin-bottom: 5px
+        align-items: center
+        &:not(:last-child)
+            margin-right: 30px
+            +res-bl(xs)
+                margin-right: 12px
+        i
+            margin-right: 5px
+            color: $primary-color
+            
+/* Blog Style Two */
+.blog-item-two
+    z-index: 1
+    position: relative
+    padding: 30px 30px 30px 0
+    +res-ab(sm)
+        display: flex
+        align-items: center
+    +res-bl(xl)
+        margin-bottom: 30px
+    +res-bl(sm)
+        padding-top: 0
+    &:not(:last-child)
+        margin-bottom: 30px
+    .image
+        +res-ab(sm)
+            flex: none
+            width: 35%
+            margin-right: 25px
+        +res-bl(sm)
+            margin-bottom: 25px
+        img
+            border-radius: 10px
+            +res-ab(sm)
+                width: 100%
+    .content
+        +res-bl(sm)
+            padding-left: 30px
+        .blog-admin
+            margin-bottom: 10px
+        h5
+            font-size: 22px
+            +res-bl(xs)
+                font-size: 20px
+    &:after
+        content: ''
+        +poRB(0)
+        z-index: -1
+        +size(90%, 100%)
+        border-radius: 10px
+        background: $lighter-color
+        +res-bl(sm)
+            +size(100%, 80%)
+    &.big-item
+        .image
+            +res-ab(sm)
+                width: 44%
+            +res-ab(xl)
+                margin-right: 55px
+        &:after
+            +res-ab(sm)
+                width: 80%
+            
+/* Blog Style Three */
+.blog-three-item
+    margin-bottom: 65px
+    .image
+        img
+            width: 100%
+            border-radius: 10px 10px 0 0
+    .content
+        padding: 30px 35px 0
+        border-radius: 0 0 10px 10px
+        border: 5px solid rgb(244, 244, 244)
+        border-top: none
+        +res-bl(xs)
+            +gapLR(padding, 20px)
+        h5
+            font-size: 22px
+        p
+            margin-bottom: 5px
+            +res-bl(xs)
+                font-size: 16px
+        .blog-meta
+            a
+                color: $primary-color
+        .blog-admin
+            margin: 0
+            background: white
+            border-radius: 10px
+            display: inline-block
+            transform: translateY(50%)
+            border: 5px solid rgb(244, 244, 244)
+            border-left: none
+            margin-left: 15px
+            padding-right: 20px
+            img
+                margin-top: -5px
+                margin-left: -20px
+                margin-bottom: -2px
+                
+/* Blog Style Four */
+.blog-four-item
+    text-align: center
+    margin-bottom: 50px
+    .image
+        overflow: hidden
+        margin-bottom: 25px
+        img
+            width: 100%
+    .content
+        +container(320px)
+        .blog-meta
+            justify-content: center
+            li
+                font-weight: 700
+                &:not(:last-child)
+                    margin-right: 10px
+                    &:after
+                        content: '|'
+                        color: #c8c8c8
+                        margin-left: 10px
+        h5
+            margin-bottom: 10px
+            +res-ab(xs)
+                font-size: 26px
+        .date
+            font-weight: 700
+            color: $primary-color
+            border-bottom: 2px solid
+            text-transform: uppercase
+            font-family: $heading-font
+            
+/* Share Tags */
+.share-tags
+    flex-wrap: wrap
+    padding-top: 25px
+    padding-bottom: 5px
+    +flexcenter(space-between)
+    border-top: 1px solid $border-color
+    border-bottom: 1px solid $border-color
+    > div
+        display: flex
+        margin-bottom: 10px
+        align-items: center
+        +res-bl(xs)
+            flex-wrap: wrap
+        h6
+            font-size: 20px
+            margin-right: 33px
+            text-transform: uppercase
+            
+/* Blog Details */
+blockquote
+    font-size: 22px
+    position: relative
+    border-radius: 20px
+    background: $yellow-color
+    padding: 50px 50px 45px 135px
+    +res-bl(sm)
+        padding-left: 100px
+    +res-bl(ms)
+        +gapLR(padding, 45px)
+    +res-bl(xs)
+        font-size: 18px
+        +gapLR(padding, 25px)
+    &:before
+        left: 50px
+        content: '\f10e'
+        font-size: 64px
+        line-height: 1
+        font-weight: 300
+        position: absolute
+        color: $primary-color
+        font-family: 'Font Awesome 5 Pro'
+        +res-bl(sm)
+            font-size: 40px
+        +res-bl(ms)
+            left: 0
+            position: relative
+            margin-bottom: 15px
+            display: inline-block
+    b
+        display: block
+        font-style: italic
+        margin-bottom: 10px
+        color: $heading-color
+    .blockquote-footer
+        font-size: 0.82em
+        
+.comment-title
+    display: flex
+    flex-wrap: wrap
+    align-items: end
+    h5
+        margin-right: 20px
+        margin-bottom: 15px
+        +res-ab(xs)
+            font-size: 30px
+        
+.comment-form
+    .form-control
+        padding: 20px 35px
+        border-radius: 8px
+        margin-bottom: 10px
+        background: $lighter-color
+        &::placeholder
+            font-style: italic
+        
+/* Comments */
+.comment-body
+    z-index: 1
+    position: relative
+    margin-bottom: 30px
+    +res-ab(sm)
+        display: flex
+        align-items: center
+    .social-style-one
+        +poRT(13%, 0)
+        +res-bl(sm)
+            top: 50px
+            right: 9%
+        a
+            color: white
+            border-radius: 0
+            +res-ab(xl)
+                +size(54px, 46px)
+                line-height: 46px
+    .author-thumb
+        flex: none
+        max-width: 135px
+        +res-ab(sm)
+            +gapTB(margin, 25px)
+        img
+            border-radius: 25px
+            border: 15px solid white
+            box-shadow: 3px 0 30px rgba(0, 0, 0, 0.05)
+    .content
+        padding: 35px 35px 20px
+        .title
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            h5
+                margin-right: 15px
+            .time
+                font-size: 16px
+                font-style: italic
+                margin-bottom: 10px
+                color: $primary-color
+        .ratting
+            transform: translateY(-10px)
+        .reply
+            +poRB(0)
+            font-size: 16px
+            @extend %heading
+            padding: 5px 22px
+            border-radius: 25px 0
+            background: $yellow-color
+    &:after
+        +poRB(0)
+        content: ''
+        z-index: -1
+        border-radius: 30px
+        background: $lighter-color
+        +size(calc(100% - 60px), 100%)
+        +res-bl(sm)
+            +size(100%, calc(100% - 50px))
+                
+/* Blog Pages */
+.blog-page-area
+    .blog-three-item .content
+        +res-bt(lg, xl)
+            +gapLR(padding, 15px)
+            
+/* Blog Details */
+.blog-details-content
+    h4
+        line-height: 1.4
+        +res-bl(xs)
+            font-size: 25px

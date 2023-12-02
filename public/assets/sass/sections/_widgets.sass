@@ -1,0 +1,133 @@
+/*******************************************************/
+/***************** ## Sidebar Widgets *****************/
+/*******************************************************/
+.widget
+    overflow: hidden
+    border-radius: 30px
+    background: $lighter-color
+    &:not(:last-child)
+        margin-bottom: 30px
+    .list-style-three
+        li
+            &:before
+                content: '\f105'
+        
+.widget-title
+    margin-bottom: 0
+    padding: 20px 40px
+    background: $yellow-color
+    +res-bl(xl)
+        +gapLR(padding, 35px)
+    +res-bl(xs)
+        +gapLR(padding, 25px)
+    
+.widget-content
+    padding: 33px 40px 40px
+    +res-bl(xl)
+        +gapLR(padding, 35px)
+    +res-bl(xs)
+        +gapLR(padding, 25px)
+
+.widget-recent-post
+    ul
+        li
+            display: flex
+            align-items: center
+            &:not(:last-child)
+                margin-bottom: 20px
+            .image
+                flex: none
+                max-width: 75px
+                margin-right: 18px
+                img
+                    border-radius: 10px
+            .content
+                h6
+                    margin-bottom: 0
+                .date
+                    font-size: 15px
+                    font-style: italic
+                    i
+                        margin-right: 5px
+                        color: $primary-color
+                        
+.tag-coulds
+    display: flex
+    flex-wrap: wrap
+    +gapLR(margin, -5px)
+    a
+        font-size: 15px
+        @extend %heading
+        padding: 2px 22px
+        font-style: italic
+        border-radius: 7px
+        margin: 0 5px 10px
+        text-transform: capitalize
+        background: $lighter-color
+        &:hover
+            color: white
+            background: $primary-color
+        
+.widget-cause-item
+    overflow: hidden
+    position: relative
+    border-radius: 10px
+    &:not(:last-child)
+        margin-bottom: 20px
+    &:before
+        +poLT(0)
+        content: ''
+        +size(100%)
+        background: rgba(0, 0, 0, 0.6)
+    img
+        width: 100%
+    .content
+        +poLB(30px, 25px)
+        h6
+            margin-bottom: 0
+            a
+                color: white
+        .price
+            color: #d4d4d4
+            font-size: 14px
+            font-weight: 700
+            font-style: italic
+            .goal
+                color: $yellow-color
+                
+.widget-services
+    .list-style-three
+        li
+            display: flex
+            margin-bottom: 0
+            position: relative
+            align-items: center
+            &:not(:first-child)
+                border-top: 1px solid $border-color
+            a
+                width: 100%
+                +gapTB(padding, 8px)
+            &:before
+                transition: 0.5s
+            &:after
+                opacity: 0
+                content: ''
+                z-index: -1
+                +poLT(-40px, 0)
+                transition: 0.5s
+                background: $primary-color
+                border-radius: 0 20px 20px 0
+                +size(calc(100% + 40px), 100%)
+            &:hover,
+            &.active
+                border-color: $lighter-color
+                +
+                    li
+                        border-color: $lighter-color
+                a
+                    color: white
+                &:before
+                    color: white
+                    margin-left: 22px
+                &:after
+                    opacity: 1

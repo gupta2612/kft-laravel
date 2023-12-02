@@ -1,0 +1,35 @@
+/*******************************************************/
+/****************** ## Services Area *******************/
+/*******************************************************/
+.service-item
+    background: white
+    margin-bottom: 30px
+    padding: 45px 40px 25px
+    .icon
+        margin-bottom: 18px
+        
+/* Service Details */
+.service-details-content
+    +res-ab(ms)
+        padding-left: 45px
+    .icon
+        +size(96px)
+        line-height: 96px
+        margin-top: -35px
+        text-align: center
+        border-radius: 25px
+        background: $primary-color
+        transform: translateY(-25px)
+        +res-bl(ms)
+            margin-left: 35px
+    .title
+        flex-wrap: wrap
+        +flexcenter(space-between)
+        h4
+            margin-bottom: 20px
+            +res-bl(sm)
+                font-size: 28px
+                
+.service-details-image
+    img
+        border-radius: 20px
