@@ -45,7 +45,7 @@ $ php artisan migrate
 ```
 
 Run local machine:
-``bash
+```bash
 $ php artisan serve
 ```
 
