@@ -37,18 +37,22 @@ Setting up your development environment on your local machine:
 $ git clone https://github.com/gupta2612/kft-laravel.git
 $ cd kft-laravel
 $ cp .env.example .env
+```
 
 Create Database
 ```bash
 $ php artisan migrate
+```
 
 Run local machine:
 ``bash
 $ php artisan serve
+```
 
 Create Dummy Data in Database - Contact & Subscribe 
 ```bash
 $ php artisan migrate:fresh --seed
+```
 
 ### Premium Partners
 
