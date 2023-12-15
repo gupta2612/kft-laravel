@@ -142,8 +142,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'email' => [
+            'email' => 'Enter Valid Email Address in field',
         ],
     ],
 
@@ -158,6 +158,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'email'=> 'Email Address',
+        'name'=> 'Complete Name',
+        'subject'=> 'Subject',
+        'description'=> 'Description'
+    ],
 
 ];

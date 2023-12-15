@@ -5705,6 +5705,12 @@ blockquote {
   margin-top: 5px;
   margin-bottom: -15px; }
 
+.has-error, .with-errors {
+    color: red;
+    margin-top: 5px;
+    margin-bottom: -15px;
+}
+
 #msgSubmit {
   margin-bottom: 0;
   margin-top: 10px; }

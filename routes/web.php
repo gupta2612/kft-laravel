@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserInsertController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +50,13 @@ Route::view("/blog/blog-details","pages/blog-details");
 Route::view("/contact","pages/contact");
 
 Route::view("/the-kft-team/donate","pages/donate");
+
+Route::view("/create","pages/create-blog");
+
+
+
+
+// Data Insert Route
+Route::post('SaveSubscribe', [UserInsertController::class, 'DataSubscribe']);
+Route::post('SaveContact', [UserInsertController::class, 'DataContact']);
+
