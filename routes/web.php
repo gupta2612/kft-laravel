@@ -60,3 +60,17 @@ Route::view("/create","pages/create-blog");
 Route::post('SaveSubscribe', [UserInsertController::class, 'DataSubscribe']);
 Route::post('SaveContact', [UserInsertController::class, 'DataContact']);
 
+
+
+// Admin Page
+Route::view('/auth/login', 'admin/auth/auth-login');
+Route::view('/auth/register', 'admin/auth/auth-register');
+
+ Route::view('/admin/home', 'admin/pages/dashboard');
+ Route::view('/admin/all-post', 'admin/pages/all-post');
+ Route::view('/admin/post-add', 'admin/pages/post-add');
+ Route::view('/admin/categories', 'admin/pages/categories');
+ Route::view('/admin/media', 'admin/pages/media');
+ Route::view('/admin/user-list', 'admin/pages/user-list');
+ Route::view('/admin/user-profile', 'admin/pages/user-profile');
+
