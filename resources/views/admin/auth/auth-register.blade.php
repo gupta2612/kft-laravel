@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="{{ asset('admin/assets/images/favicon.png') }}">
     <!-- Page Title  -->
-    <title>Login || {{ config('app.name') }}</title>
+    <title>Register || {{ config('app.name') }}</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/dashlite.css') }}">
 </head>
@@ -40,37 +40,37 @@
                                         </div>
                                     </div>
                                 </div><!-- .nk-block-head -->
-                                <form action="html/pages/auths/auth-success-v3.html">
+                                <form method="POST" action="{{ route('register') }}">
+                                    @csrf
                                     <div class="form-group">
                                         <label class="form-label" for="name">Name</label>
                                         <div class="form-control-wrap">
-                                            <input type="text" class="form-control form-control-lg" id="name" placeholder="Enter your name">
+                                            <input type="text" class="form-control form-control-lg" name="name" placeholder="Enter your name" value="{{ old('name') }}">
+                                            <span class="invalid">@error('name')
+                                                {{ $message }}
+                                            @enderror</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-label" for="email">Email or Username</label>
+                                        <label class="form-label" for="email">Email</label>
                                         <div class="form-control-wrap">
-                                            <input type="text" class="form-control form-control-lg" id="email" placeholder="Enter your email address or username">
+                                            <input type="text" class="form-control form-control-lg" name="email" placeholder="Enter your email address" value="{{ old('email') }}">
+                                            <span class="invalid">@error('email')
+                                                {{ $message }}
+                                            @enderror</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" for="password">Passcode</label>
                                         <div class="form-control-wrap">
-                                            <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password">
-                                                <em class="passcode-icon icon-show icon ni ni-eye"></em>
-                                                <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
-                                            </a>
-                                            <input type="password" class="form-control form-control-lg" id="password" placeholder="Enter your passcode">
+                                            <input type="password" class="form-control form-control-lg" name="password" placeholder="Enter your passcode" value="{{ old('password') }}">
+                                            <span class="invalid">@error('password')
+                                                {{ $message }}
+                                            @enderror</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="custom-control custom-control-xs custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="checkbox">
-                                            <label class="custom-control-label" for="checkbox">I agree to Dashlite <a tabindex="-1" href="javascript:void(0)">Privacy Policy</a> &amp; <a tabindex="-1" href="javascript:void(0)"> Terms.</a></label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <button class="btn btn-lg btn-primary btn-block">Register</button>
+                                        <button type="submit" class="btn btn-lg btn-primary btn-block">Register</button>
                                     </div>
                                 </form><!-- form -->
                                 <div class="form-note-s2 pt-4"> Already have an account ? <a href="/auth/login"><strong>Sign in instead</strong></a>

@@ -40,13 +40,17 @@
                                         </div>
                                     </div>
                                 </div><!-- .nk-block-head -->
-                                <form action="#">
+                                <form action="auth/login" method="POST">
+                                    @csrf
                                     <div class="form-group">
                                         <div class="form-label-group">
                                             <label class="form-label" for="default-01">Email</label>
                                         </div>
                                         <div class="form-control-wrap">
-                                            <input type="text" class="form-control form-control-lg" id="default-01" placeholder="Enter your email address or username">
+                                            <input type="text" class="form-control form-control-lg" name="email" placeholder="Enter your email address">
+                                            <span class="invalid">@error('email')
+                                                {{ $message }}
+                                                @enderror</span>
                                         </div>
                                     </div><!-- .form-group -->
                                     <div class="form-group">
@@ -55,11 +59,11 @@
                                             <a class="link link-primary link-sm" tabindex="-1" href="javascript:void(0)">Forgot Passcode?</a>
                                         </div>
                                         <div class="form-control-wrap">
-                                            <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password">
-                                                <em class="passcode-icon icon-show icon ni ni-eye"></em>
-                                                <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
-                                            </a>
-                                            <input type="password" class="form-control form-control-lg" id="password" placeholder="Enter your passcode">
+
+                                            <input type="password" class="form-control form-control-lg" name="password" placeholder="Enter your passcode">
+                                            <span class="invalid">@error('password')
+                                                {{ $message }}
+                                                @enderror</span>
                                         </div>
                                     </div><!-- .form-group -->
                                     <div class="form-group">
