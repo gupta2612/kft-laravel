@@ -16,8 +16,9 @@
                             <div class="card card-bordered">
                                 <div class="card-inner">
                                     <div class="card-title">
-                                        <h3 class="title">Welcome to KFT Dashboard!</h3>
+                                        <h3 class="title">Welcome to KFT Dashboard! </h3>
                                     </div>
+                                    
                                     <!-- .row -->
                                 </div><!-- .card-inner -->
                             </div><!-- .card -->

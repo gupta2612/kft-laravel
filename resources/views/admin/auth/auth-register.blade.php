@@ -28,8 +28,8 @@
                             <div class="nk-block nk-block-middle nk-auth-body">
                                 <div class="brand-logo pb-5">
                                     <a href="html/index.html" class="logo-link">
-                                        <img class="logo-light logo-img logo-img-lg" src="{{ asset('admin/assets/images/logo.png') }}" srcset="{{ asset('admin/assets/images/logo2x.png 2x') }}" alt="logo">
-                                        <img class="logo-dark logo-img logo-img-lg" src="{{ asset('admin/assets/images/logo-dark.png') }}" srcset="{{ asset('admin/assets/images/logo-dark2x.png 2x') }}" alt="logo-dark">
+                                        <img class="logo-light logo-img logo-img-lg" src="{{ asset('admin/assets/images/logo.png') }}" srcset="{{ asset('admin/assets/images/logo-2x.png 2x') }}" alt="logo">
+                                        <img class="logo-dark logo-img logo-img-lg" src="{{ asset('admin/assets/images/logo.png') }}" srcset="{{ asset('admin/assets/images/logo-2x.png 2x') }}" alt="logo-dark">
                                     </a>
                                 </div>
                                 <div class="nk-block-head">
@@ -40,7 +40,13 @@
                                         </div>
                                     </div>
                                 </div><!-- .nk-block-head -->
-                                <form method="POST" action="{{ route('register') }}">
+                                @if (Session::has('wrong'))
+                                <div class="alert alert-fill alert-danger alert-icon">
+                                    <em class="icon ni ni-cross-circle"></em>
+                                    {{ Session::get('wrong') }}
+                                </div>
+                                @endif
+                                <form method="POST" action="{{ route('admin/adminregister') }}">
                                     @csrf
                                     <div class="form-group">
                                         <label class="form-label" for="name">Name</label>
@@ -73,7 +79,7 @@
                                         <button type="submit" class="btn btn-lg btn-primary btn-block">Register</button>
                                     </div>
                                 </form><!-- form -->
-                                <div class="form-note-s2 pt-4"> Already have an account ? <a href="/auth/login"><strong>Sign in instead</strong></a>
+                                <div class="form-note-s2 pt-4"> Already have an account ? <a href="admin/login"><strong>Sign in instead</strong></a>
                                 </div>
                             </div><!-- .nk-block -->
                             <div class="nk-block nk-auth-footer">

@@ -20,7 +20,7 @@
                                 <a href="#" class="btn btn-icon btn-trigger toggle-expand me-n1" data-target="pageMenu"><em class="icon ni ni-more-v"></em></a>
                                 <div class="toggle-expand-content" data-content="pageMenu" style="display: none;">
                                     <ul class="nk-block-tools g-3">
-                                        <li>
+                                        {{-- <li>
                                             <div class="drodown">
                                                 <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-bs-toggle="dropdown"><em class="d-none d-sm-inline icon ni ni-filter-alt"></em><span>Filtered by</span><em class="dd-indc icon ni ni-chevron-right"></em></a>
                                                 <div class="dropdown-menu dropdown-menu-end">
@@ -36,9 +36,9 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </li>
+                                        </li> --}}
                                         <li class="nk-block-tools-opt">
-                                            <a data-bs-toggle="modal" href="#addMedia" class="btn btn-primary"><em class="icon ni ni-plus"></em><span>Add Media</span></a>
+                                            <a href="/admin/post-add" class="btn btn-primary"><em class="icon ni ni-plus"></em><span>Add Post</span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -48,102 +48,21 @@
                 </div><!-- .nk-block-head -->
                 <div class="nk-block">
                     <div class="row g-gs">
+                        @foreach ($collection as $item)
                         <div class="col-sm-6 col-lg-4 col-xxl-3">
                             <div class="gallery gallery-content card card-bordered">
                                 <div class="gallery-images">
-                                    <img class="w-100 rounded" src="./images/cms/sq/a.jpg" alt="">
+                                    <img class="w-100 rounded" src="{{ asset('assets/images/background/'.$item->image) }}" alt="">
                                 </div>
                                 <div class="image-overlay">
                                     <ul>
-                                        <li><a data-bs-toggle="modal" href="#editMedia"><em class="icon ni ni-edit"></em></a></li>
+                                        <li><a target="_blank" href="{{ asset('assets/images/background/'.$item->image) }}"><em class="icon ni ni-edit"></em></a></li>
                                     </ul>
                                 </div><!--image-overlay-->
                             </div>
                         </div>
-                        <div class="col-sm-6 col-lg-4 col-xxl-3">
-                            <div class="gallery gallery-content card card-bordered">
-                                <div class="gallery-images">
-                                    <img class="w-100 rounded" src="./images/cms/sq/b.jpg" alt="">
-                                </div>
-                                <div class="image-overlay">
-                                    <ul>
-                                        <li><a data-bs-toggle="modal" href="#editMedia"><em class="icon ni ni-edit"></em></a></li>
-                                    </ul>
-                                </div><!--image-overlay-->
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 col-xxl-3">
-                            <div class="gallery gallery-content card card-bordered">
-                                <div class="gallery-images">
-                                    <img class="w-100 rounded" src="./images/cms/sq/c.jpg" alt="">
-                                </div>
-                                <div class="image-overlay">
-                                    <ul>
-                                        <li><a data-bs-toggle="modal" href="#editMedia"><em class="icon ni ni-edit"></em></a></li>
-                                    </ul>
-                                </div><!--image-overlay-->
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 col-xxl-3">
-                            <div class="gallery gallery-content card card-bordered">
-                                <div class="gallery-images">
-                                    <img class="w-100 rounded" src="./images/cms/sq/d.jpg" alt="">
-                                </div>
-                                <div class="image-overlay">
-                                    <ul>
-                                        <li><a data-bs-toggle="modal" href="#editMedia"><em class="icon ni ni-edit"></em></a></li>
-                                    </ul>
-                                </div><!--image-overlay-->
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 col-xxl-3">
-                            <div class="gallery gallery-content card card-bordered">
-                                <div class="gallery-images">
-                                    <img class="w-100 rounded" src="./images/cms/sq/e.jpg" alt="">
-                                </div>
-                                <div class="image-overlay">
-                                    <ul>
-                                        <li><a data-bs-toggle="modal" href="#editMedia"><em class="icon ni ni-edit"></em></a></li>
-                                    </ul>
-                                </div><!--image-overlay-->
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 col-xxl-3">
-                            <div class="gallery gallery-content card card-bordered">
-                                <div class="gallery-images">
-                                    <img class="w-100 rounded" src="./images/cms/sq/f.jpg" alt="">
-                                </div>
-                                <div class="image-overlay">
-                                    <ul>
-                                        <li><a data-bs-toggle="modal" href="#editMedia"><em class="icon ni ni-edit"></em></a></li>
-                                    </ul>
-                                </div><!--image-overlay-->
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 col-xxl-3">
-                            <div class="gallery gallery-content card card-bordered">
-                                <div class="gallery-images">
-                                    <img class="w-100 rounded" src="./images/cms/sq/g.jpg" alt="">
-                                </div>
-                                <div class="image-overlay">
-                                    <ul>
-                                        <li><a data-bs-toggle="modal" href="#editMedia"><em class="icon ni ni-edit"></em></a></li>
-                                    </ul>
-                                </div><!--image-overlay-->
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 col-xxl-3">
-                            <div class="gallery gallery-content card card-bordered">
-                                <div class="gallery-images">
-                                    <img class="w-100 rounded" src="./images/cms/sq/h.jpg" alt="">
-                                </div>
-                                <div class="image-overlay">
-                                    <ul>
-                                        <li><a data-bs-toggle="modal" href="#editMedia"><em class="icon ni ni-edit"></em></a></li>
-                                    </ul>
-                                </div><!--image-overlay-->
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                 </div><!-- .nk-block -->
                 <div class="nk-block">

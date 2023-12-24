@@ -49,18 +49,14 @@ Route::view("/award-and-media/gallery","pages/gallery");
 Route::view("/award-and-media/video","pages/video");
 
 
-Route::view("/blog","pages/blog");
-Route::view("/blog/blog-details","pages/blog-details");
+Route::get("/blog","BlogViewController@KftBlogView")->name('blog');
+Route::get("/blog/blog-details/{id}/{slug}","BlogViewController@KftBlogDetailsView");
 
 Route::view("/contact","pages/contact");
 
 Route::view("/the-kft-team/donate","pages/donate");
 
 Route::view("/create","pages/create-blog");
-
-
-
-
 // Data Insert Route
 Route::post('SaveSubscribe', [UserInsertController::class, 'DataSubscribe']);
 Route::post('SaveContact', [UserInsertController::class, 'DataContact']);
@@ -68,13 +64,34 @@ Route::post('SaveContact', [UserInsertController::class, 'DataContact']);
 
 
 // Admin Page
-Route::view('/auth/login', 'admin/auth/auth-login');
-Route::view('/auth/register', 'admin/auth/auth-register');
+Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function(){
+    Route::namespace('Auth')->middleware('guest:admin')->group(function(){
+        Route::get('login', 'AuthenticatedSessionController@create')->name('login');
+        Route::post('login', 'AuthenticatedSessionController@store')->name('adminlogin');
 
- Route::view('/admin/home', 'admin/pages/dashboard');
- Route::view('/admin/all-post', 'admin/pages/all-post');
- Route::view('/admin/post-add', 'admin/pages/post-add');
- Route::view('/admin/categories', 'admin/pages/categories');
- Route::view('/admin/media', 'admin/pages/media');
- Route::view('/admin/user-list', 'admin/pages/user-list');
- Route::view('/admin/user-profile', 'admin/pages/user-profile');
+        Route::get('register', 'RegisteredUserController@create')->name('register');
+        Route::post('register', 'RegisteredUserController@store')->name('adminregister');
+    });
+    Route::middleware('admin')->group(function () {
+        Route::get('dashboard', 'HomeController@index')->name('dashboard');
+
+        Route::get('all-post', 'BlogViewController@BlogView')->name('all-post');
+        Route::get('all-post/desc', 'BlogViewController@BlogViewDESC')->name('desc');
+        Route::get('all-post/asc', 'BlogViewController@BlogViewASC')->name('asc');
+
+        Route::get('post-add', 'AllPostController@create')->name('post-add');
+        Route::post('post-add', 'AllPostController@store')->name('addpost');
+        Route::get('edit-post/{id}', 'BlogViewController@BlogEditUpdate')->name('edit-post');
+        Route::post('edit-post', 'AllPostController@BlogViewUpdate')->name('update-post');
+
+        Route::get('delete/{id}', 'AllPostController@DeleteStore')->name('delete');
+
+        //Route::view('post-add', 'admin/pages/post-add');
+        Route::view('categories', 'admin/pages/categories');
+        // Route::view('media', 'admin/pages/media');
+        Route::get('media', 'BlogViewController@MediaView')->name('media');
+        Route::view('user-list', 'admin/pages/user-list');
+        Route::view('user-profile', 'admin/pages/user-profile');
+    });
+    Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
+});

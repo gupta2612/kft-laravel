@@ -52,11 +52,13 @@
                                             <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
                                                 <div class="user-card">
                                                     <div class="user-avatar">
-                                                        <span>MG</span>
+                                                        <span>{{
+                                                            Str::substr(Auth::guard('admin')->user()->name, 0, 1)
+                                                            }}</span>
                                                     </div>
                                                     <div class="user-info">
-                                                        <span class="lead-text">Manish Gupta</span>
-                                                        <span class="sub-text">info@kft.com</span>
+                                                        <span class="lead-text">{{ Auth::guard('admin')->user()->name }} </span>
+                                                        <span class="sub-text">{{ Auth::guard('admin')->user()->email }}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -67,7 +69,14 @@
                                             </div>
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
-                                                    <li><a href="/auth/login"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                                    <li>
+                                                        {{-- <a href="{{ route('admin/logout') }}"><em class="icon ni ni-signout"></em><span>Sign out</span></a> --}}
+                                                    <form action="{{ route('admin/logout') }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit"><em class="icon ni ni-signout"></em> <span>Sign out</span></button>
+                                                    </form>
+
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -85,7 +94,7 @@
                                 <h6 class="overline-title text-primary-alt">Dashboard</h6>
                             </li><!-- .nk-menu-heading -->
                             <li class="nk-menu-item">
-                                <a href="/admin/home" class="nk-menu-link">
+                                <a href="admin/dashboard" class="nk-menu-link">
                                     <span class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span>
                                     <span class="nk-menu-text">Dashboard</span>
                                 </a>

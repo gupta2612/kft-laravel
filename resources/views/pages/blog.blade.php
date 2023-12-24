@@ -25,149 +25,32 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="row">
+                            @foreach ($collection as $item)
                             <div class="col-md-6">
                                 <div class="blog-four-item wow fadeInUp delay-0-2s">
                                     <div class="image br-30">
-                                        <img src="{{ asset('assets/images/blog/blog-four1.jpg') }}" alt="Blog">
+                                        <img src="{{ asset('assets/images/background/'.$item->image) }}" alt="Blog">
                                     </div>
                                     <div class="content">
                                         <ul class="blog-meta">
-                                            <li>By <a href="#">James Colies</a></li>
-                                            <li>22 Comments</li>
+                                            <li>By <a href="javascript:void(0)">&nbsp;{{ $item->user_name }}</a></li>
+                                            <li>2 Comments</li>
                                         </ul>
-                                        <h5><a href="/blog/blog-details">How to get start fundraising for kids</a></h5>
-                                        <a class="date" href="#">26 Aug 2022</a>
+                                        <h5><a href="/blog/blog-details/{{ $item->id }}/{{ $item->slug }}">{{ Str::words($item->title, 5, '...') }}</a></h5>
+                                        {{-- <a class="date" href="javascript:void(0)">{{ $item->date }}</a> --}}
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="blog-four-item wow fadeInUp delay-0-4s">
-                                    <div class="image br-30">
-                                        <img src="{{ asset('assets/images/blog/blog-four2.jpg') }}" alt="Blog">
-                                    </div>
-                                    <div class="content">
-                                        <ul class="blog-meta">
-                                            <li>By <a href="#">James Colies</a></li>
-                                            <li>22 Comments</li>
-                                        </ul>
-                                        <h5><a href="/blog/blog-details">Students take the initiative to help children </a></h5>
-                                        <a class="date" href="#">26 Aug 2022</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="blog-four-item wow fadeInUp delay-0-2s">
-                                    <div class="image br-30">
-                                        <img src="{{ asset('assets/images/blog/blog-four3.jpg') }}" alt="Blog">
-                                    </div>
-                                    <div class="content">
-                                        <ul class="blog-meta">
-                                            <li>By <a href="#">James Colies</a></li>
-                                            <li>22 Comments</li>
-                                        </ul>
-                                        <h5><a href="/blog/blog-details">The right guideline to donate for homeless people</a></h5>
-                                        <a class="date" href="#">30 mar 2022</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="blog-four-item wow fadeInUp delay-0-4s">
-                                    <div class="image br-30">
-                                        <img src="{{ asset('assets/images/blog/blog-four4.jpg') }}" alt="Blog">
-                                    </div>
-                                    <div class="content">
-                                        <ul class="blog-meta">
-                                            <li>By <a href="#">James Colies</a></li>
-                                            <li>22 Comments</li>
-                                        </ul>
-                                        <h5><a href="/blog/blog-details">How does the malnutrition affect children?</a></h5>
-                                        <a class="date" href="#">30 mar 2022</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="blog-four-item wow fadeInUp delay-0-2s">
-                                    <div class="image br-30">
-                                        <img src="{{ asset('assets/images/blog/blog-four5.jpg') }}" alt="Blog">
-                                    </div>
-                                    <div class="content">
-                                        <ul class="blog-meta">
-                                            <li>By <a href="#">James Colies</a></li>
-                                            <li>22 Comments</li>
-                                        </ul>
-                                        <h5><a href="/blog/blog-details">Mauris gravida lacus metus ac sagittis</a></h5>
-                                        <a class="date" href="#">30 mar 2022</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="blog-four-item wow fadeInUp delay-0-4s">
-                                    <div class="image br-30">
-                                        <img src="{{ asset('assets/images/blog/blog-four6.jpg') }}" alt="Blog">
-                                    </div>
-                                    <div class="content">
-                                        <ul class="blog-meta">
-                                            <li>By <a href="#">James Colies</a></li>
-                                            <li>22 Comments</li>
-                                        </ul>
-                                        <h5><a href="/blog/blog-details">Nulla quam neque, interdum vitae fermentum</a></h5>
-                                        <a class="date" href="#">30 mar 2022</a>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                             <div class="col-lg-12 text-center">
                                 <ul class="pagination flex-wrap mt-45 rmt-25 wow fadeInUp delay-0-2s">
-                                    <li class="page-item"><a class="prev" href="#">Prev</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item active">
-                                        <span class="page-link">
-                                            2
-                                            <span class="sr-only">(current)</span>
-                                        </span>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                    <li class="page-item"><span class="dots"><i class="fal fa-ellipsis-h"></i></span></li>
-                                    <li class="page-item"><a class="page-link" href="#">16</a></li>
-                                    <li class="page-item"><a class="next" href="#">Next</a></li>
+                                    {{ $collection->links('pagination::bootstrap-4') }}
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-7 col-sm-9">
                         <div class="main-sidebar rmt-75">
-                            <div class="widget widget-recent-post wow fadeInUp delay-0-2s">
-                                <h5 class="widget-title">Recent Posts</h5>
-                                <ul class="widget-content">
-                                    <li>
-                                        <div class="image">
-                                            <img src="{{ asset('assets/images/widgets/post1.jpg') }}" alt="Post">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="/blog/blog-details">This is How I Relax on Lazy Sundays</a></h6>
-                                            <a class="date" href="#"><i class="far fa-calendar-alt"></i>June 16, 2022</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="image">
-                                            <img src="{{ asset('assets/images/widgets/post2.jpg') }}" alt="Post">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="/blog/blog-details">Going Shopping in New Dress & a Hat</a></h6>
-                                            <a class="date" href="#"><i class="far fa-calendar-alt"></i>June 16, 2022</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="image">
-                                            <img src="{{ asset('assets/images/widgets/post3.jpg') }}" alt="Post">
-                                        </div>
-                                        <div class="content">
-                                            <h6><a href="/blog/blog-details">How an Island Forms in River And Stones</a></h6>
-                                            <a class="date" href="#"><i class="far fa-calendar-alt"></i>June 16, 2022</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
                             <div class="widget widget-causes wow fadeInUp delay-0-2s">
                                 <h5 class="widget-title">Recent Causes</h5>
                                 <div class="widget-content">

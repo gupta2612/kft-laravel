@@ -1,7 +1,7 @@
 @extends('admin/layout/admin-main')
 
 @section('admin-title')
-{{ 'Post Add' }}
+{{ 'Edit Post' }}
 @endsection
 
 @section('admin-content')
@@ -28,14 +28,15 @@
                             @endif
                             <div class="card card-bordered">
                                 <div class="card-inner">
-                                    <form action="{{ route('admin/addpost') }}" method="POST" enctype="multipart/form-data">
+                                    @foreach ($collection as $item)
+                                    <form action="admin/edit-post" method="POST" enctype="multipart/form-data">
                                         @csrf
-                                        <input type="hidden" name="user_id" value="{{ Auth::guard('admin')->user()->id }}">
+                                        <input type="hidden" name="id" value="{{ $item->id }}">
                                         <div class="row g-gs">
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <label class="form-label" for="addTitle">Title</label>
-                                                    <input type="text" class="form-control" name="addTitle" placeholder="Title" value="{{ old('addTitle') }}">
+                                                    <input type="text" class="form-control" name="addTitle" placeholder="Title" value="{{ $item->title }}">
                                                     @error('addTitle')
                                                     <span class="invalid">{{ $message }}</span>
                                                     @enderror
@@ -47,7 +48,7 @@
                                                     <div class="form-control-wrap">
                                                         {{-- <div class="summernote-lg summernote-minimal">
                                                         </div> --}}
-                                                        <textarea name="post" class="summernote-lg summernote-minimal">{{ old('post') }}</textarea>
+                                                        <textarea name="post" class="summernote-lg summernote-minimal">{{ $item->content }}</textarea>
                                                         @error('post')
                                                     <span class="invalid-err">{{ $message }}</span>
                                                     @enderror
@@ -61,12 +62,11 @@
                         <div class="col-lg-4">
                             <div class="card card-bordered">
                                 <div class="card-inner">
-
                                         <div class="row g-gs">
                                             <div class="col-lg-12 col-sm-6">
                                                 <div class="form-group">
                                                     <label class="form-label" for="addTags">Tags</label>
-                                                    <input type="text" class="form-control" name="addTags" placeholder="Tags" value="{{ old('addTags') }}">
+                                                    <input type="text" class="form-control" name="addTags" placeholder="Tags" value="{{ $item->tags }}">
                                                     @error('addTags')
                                                     <span class="invalid">{{ $message }}</span>
                                                     @enderror
@@ -75,22 +75,22 @@
                                             <div class="col-lg-12 col-sm-6">
                                                 <div class="form-group">
                                                     <label class="form-label" for="addSlug">Slug</label>
-                                                    <input type="text" class="form-control" name="addSlug" placeholder="Slug" value="{{ old('addSlug') }}">
+                                                    <input type="text" class="form-control" name="addSlug" placeholder="Slug" value="{{ $item->slug }}">
                                                     @error('addSlug')
                                                     <span class="invalid">{{ $message }}</span>
                                                     @enderror
                                                 </div>
                                             </div>
-                                            <div class="col-12">
+                                            {{-- <div class="col-12">
                                                 <div class="form-group">
                                                     <label class="form-label">Featured Image</label>
-                                                    <input type="file" name="photo" class="form-control">
+                                                    <input type="file" name="photo" class="form-control" value="{{ $item->image }}">
                                                     @error('photo')
                                                     <span class="invalid invalid-err">{{ $message }}</span>
                                                     @enderror
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-12 col-sm-6">
+                                            </div> --}}
+                                            {{-- <div class="col-lg-12 col-sm-6">
                                                 <div class="form-group">
                                                     <label class="form-label">Categories</label>
                                                     <div class="form-control-wrap">
@@ -105,7 +105,7 @@
                                                     @enderror
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <div class="col-lg-12 col-sm-6">
                                                 <div class="form-group">
                                                     <label class="form-label" for="addDate">Date</label>
@@ -113,14 +113,14 @@
                                                         <div class="form-icon form-icon-right">
                                                             <em class="icon ni ni-calendar"></em>
                                                         </div>
-                                                        <input type="text" class="form-control date-picker" name="addDate" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" value="{{ old('addDate') }}">
+                                                        <input type="text" class="form-control date-picker" name="addDate" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" value="{{ $item->date }}">
                                                         @error('addDate')
                                                     <span class="invalid">{{ $message }}</span>
                                                     @enderror
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12 col-sm-6">
+                                            {{-- <div class="col-lg-12 col-sm-6">
                                                 <div class="form-group">
                                                     <label class="form-label">Select Status</label>
                                                     <div class="form-control-wrap">
@@ -129,18 +129,6 @@
                                                             <option value="pending">Pending</option>
                                                             <option value="draft">Draft</option>
                                                         </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {{-- <div class="col-12">
-                                                <div class="form-group">
-                                                    <div class="g-3 align-center flex-wrap">
-                                                        <div class="g">
-                                                            <div class="custom-control custom-switch">
-                                                                <input type="checkbox" class="custom-control-input" name="addComment">
-                                                                <label class="custom-control-label" for="addComment">Allow Comments</label>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div> --}}
@@ -158,6 +146,7 @@
                                             </div>
                                         </div>
                                     </form>
+                                    @endforeach
                                 </div>
                             </div><!-- .card -->
                         </div><!-- .col -->

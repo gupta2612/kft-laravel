@@ -145,6 +145,10 @@ return [
         'email' => [
             'email' => 'Enter Valid Email Address in field',
         ],
+        'photo' => [
+            'mimes' => 'Select only JPG, JPEG and PNG file',
+            'between'   => 'The featured image must be between 50 kb to 300 kb.'
+        ]
     ],
 
     /*
@@ -162,7 +166,15 @@ return [
         'email'=> 'Email Address',
         'name'=> 'Complete Name',
         'subject'=> 'Subject',
-        'description'=> 'Description'
+        'description'=> 'Description',
+
+        'addTitle'=> 'Title',
+        'post'=> 'Content',
+        'addTags'=> 'Tags',
+        'addSlug'=> 'Slug',
+        'categories'=> 'Categories',
+        'addDate'=> 'Date',
+        'photo'=> 'Featured Image'
     ],
 
 ];

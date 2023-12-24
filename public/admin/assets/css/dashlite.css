@@ -43083,3 +43083,13 @@ body.dark-mode.nk-body.ui-clean {
 }
 
 /*! END @iO */
+
+
+
+
+/** Custom */
+.invalid-err{
+    color: #e85347 !important;
+    font-size: 11px !important;
+    font-style: italic !important;
+}

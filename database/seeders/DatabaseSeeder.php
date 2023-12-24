@@ -25,5 +25,10 @@ class DatabaseSeeder extends Seeder
             //     Kft_contactSeeder::class,
             //     Kft_subscribeSeeder::class
             // ]);
+
+            /** Seeder Data Save */
+            $this->call([
+                Kft_adminSeeder::class
+            ]);
     }
 }
