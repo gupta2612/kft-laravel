@@ -94,11 +94,11 @@
                                                 <div class="form-group">
                                                     <label class="form-label">Categories</label>
                                                     <div class="form-control-wrap">
-                                                        <select class="form-select js-select2" multiple="multiple" name="categories" data-placeholder="Categories">
+                                                        <select class="form-select js-select2" name="categories" data-placeholder="Categories">
                                                             <option value="uncategorized">Uncategorized</option>
-                                                            <option value="covid">Covid</option>
-                                                            <option value="seo">SEO</option>
-                                                            <option value="website">Website</option>
+                                                            @foreach ($collection as $item)
+                                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                            @endforeach
                                                         </select>
                                                         @error('categories')
                                                     <span class="invalid">{{ $message }}</span>
@@ -125,9 +125,9 @@
                                                     <label class="form-label">Select Status</label>
                                                     <div class="form-control-wrap">
                                                         <select class="form-select js-select2" data-placeholder="Status" name="status">
-                                                            <option value="published">Published</option>
-                                                            <option value="pending">Pending</option>
-                                                            <option value="draft">Draft</option>
+                                                            <option value="1">Published</option>
+                                                            <option value="2">Pending</option>
+                                                            <option value="3">Draft</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -148,11 +148,11 @@
                                                 <div class="form-group">
                                                     <ul class="align-center flex-wrap flex-sm-nowrap gx-4 mt-1">
                                                         <li>
-                                                            <button type="submit" class="btn btn-primary">Publish Post</button>
+                                                            <button type="submit" class="btn btn-primary">Submit Post</button>
                                                         </li>
-                                                        <li>
+                                                        {{-- <li>
                                                             <a href="#" class="link link-light">Save to Draft</a>
-                                                        </li>
+                                                        </li> --}}
                                                     </ul>
                                                 </div>
                                             </div>

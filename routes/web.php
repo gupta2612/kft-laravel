@@ -50,6 +50,8 @@ Route::view("/award-and-media/video","pages/video");
 
 
 Route::get("/blog","BlogViewController@KftBlogView")->name('blog');
+Route::get("/blog/{id}/{name}","BlogViewController@CategoriesView")->name('blog-categories');
+
 Route::get("/blog/blog-details/{id}/{slug}","BlogViewController@KftBlogDetailsView");
 
 Route::view("/contact","pages/contact");
@@ -78,6 +80,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function(){
         Route::get('all-post', 'BlogViewController@BlogView')->name('all-post');
         Route::get('all-post/desc', 'BlogViewController@BlogViewDESC')->name('desc');
         Route::get('all-post/asc', 'BlogViewController@BlogViewASC')->name('asc');
+        Route::get('/{id}/user-post', 'BlogViewController@UserByView')->name('user-post');
 
         Route::get('post-add', 'AllPostController@create')->name('post-add');
         Route::post('post-add', 'AllPostController@store')->name('addpost');
@@ -86,10 +89,12 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function(){
 
         Route::get('delete/{id}', 'AllPostController@DeleteStore')->name('delete');
 
-        //Route::view('post-add', 'admin/pages/post-add');
-        Route::view('categories', 'admin/pages/categories');
-        // Route::view('media', 'admin/pages/media');
+        Route::get('categories', 'CategorieController@CategorieView')->name('categories');
+        Route::post('categories', 'CategorieController@CategorieStore')->name('add-categories');
+        Route::get('categories/delete/{id}', 'CategorieController@CategorieStoreDelete')->name('categories-delete');
+
         Route::get('media', 'BlogViewController@MediaView')->name('media');
+
         Route::view('user-list', 'admin/pages/user-list');
         Route::view('user-profile', 'admin/pages/user-profile');
     });

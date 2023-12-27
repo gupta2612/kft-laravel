@@ -44,32 +44,23 @@
                             @endforeach
                             <div class="col-lg-12 text-center">
                                 <ul class="pagination flex-wrap mt-45 rmt-25 wow fadeInUp delay-0-2s">
-                                    {{ $collection->links('pagination::bootstrap-4') }}
+                                    {{ $collection->links() }}
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-7 col-sm-9">
                         <div class="main-sidebar rmt-75">
-                            <div class="widget widget-causes wow fadeInUp delay-0-2s">
-                                <h5 class="widget-title">Recent Causes</h5>
-                                <div class="widget-content">
-                                    <div class="widget-cause-item">
-                                        <img src="{{ asset('assets/images/widgets/cause1.jpg') }}" alt="Cause">
-                                        <div class="content">
-                                            <h6><a href="/the-kft-team/donate">Help Water Retention</a></h6>
-                                            <span class="price">55% of <span class="goal">$500,000 Goal</span></span>
-                                        </div>
-                                    </div>
-                                    <div class="widget-cause-item">
-                                        <img src="{{ asset('assets/images/widgets/cause2.jpg') }}" alt="Cause">
-                                        <div class="content">
-                                            <h6><a href="/the-kft-team/donate">Povert People Save</a></h6>
-                                            <span class="price">55% of <span class="goal">$500,000 Goal</span></span>
-                                        </div>
-                                    </div>
-                                </div>
+
+                            <div class="widget widget-links wow fadeInUp delay-0-2s">
+                                <h5 class="widget-title">Useful Links</h5>
+                                <ul class="widget-content list-style-three">
+                                    @foreach ($cate_data as $item)
+                                    <li><a href="/blog/{{ $item->id }}/{{ $item->name }}">{{ $item->name }}</a></li>
+                                    @endforeach
+                                </ul>
                             </div>
+
                             <div class="widget widget-campaign wow fadeInUp delay-0-2s">
                                 <div class="priorities-details-campaign">
                                     <div class="campaign-content bgc-yellow">

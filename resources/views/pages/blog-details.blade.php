@@ -12,7 +12,7 @@
                 <div class="banner-inner text-white mt-150 rmt-0">
                     <div class="banner-top pb-20">
                         <div class="section-title wow fadeInLeft delay-0-2s">
-                            <a href="javascript:void(0)" class="category">{{ $item->categories }}</a>
+                            <a href="javascript:void(0)" class="category">{{ $item->categories_name }}</a>
                             <h3>{{ $item->title }}</h3>
                         </div>
                         <ul class="date-author pt-15 rmt-0 wow fadeInRight delay-0-2s">

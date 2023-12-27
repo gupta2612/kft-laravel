@@ -120,26 +120,36 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            {{-- <div class="col-lg-12 col-sm-6">
+                                            <div class="col-lg-12 col-sm-6">
                                                 <div class="form-group">
                                                     <label class="form-label">Select Status</label>
                                                     <div class="form-control-wrap">
                                                         <select class="form-select js-select2" data-placeholder="Status" name="status">
-                                                            <option value="published">Published</option>
-                                                            <option value="pending">Pending</option>
-                                                            <option value="draft">Draft</option>
+                                                            @if ($item->status == 1)
+                                                                <option value="1" selected>Published</option>
+                                                                <option value="2">Pending</option>
+                                                                <option value="3">Draft</option>
+                                                            @elseif($item->status == 2)
+                                                                <option value="1">Published</option>
+                                                                <option value="2" selected>Pending</option>
+                                                                <option value="3">Draft</option>
+                                                            @else
+                                                                <option value="1">Published</option>
+                                                                <option value="2">Pending</option>
+                                                                <option value="3" selected>Draft</option>
+                                                            @endif
                                                         </select>
+                                                        @error('status')
+                                                            <span class="invalid">{{ $message }}</span>
+                                                        @enderror
                                                     </div>
                                                 </div>
-                                            </div> --}}
+                                            </div>
                                             <div class="col-12">
                                                 <div class="form-group">
                                                     <ul class="align-center flex-wrap flex-sm-nowrap gx-4 mt-1">
                                                         <li>
-                                                            <button type="submit" class="btn btn-primary">Publish Post</button>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="link link-light">Save to Draft</a>
+                                                            <button type="submit" class="btn btn-primary">Update Post</button>
                                                         </li>
                                                     </ul>
                                                 </div>

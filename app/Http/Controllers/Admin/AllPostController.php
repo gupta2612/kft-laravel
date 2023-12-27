@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 use App\Models\Kft_allpost;
 use File;
 use Auth;
@@ -12,7 +13,11 @@ use Auth;
 class AllPostController extends Controller
 {
     function create(){
-        return \view('admin/pages/post-add');
+        $data = DB::table('Kft_categories')
+                ->select('id', 'name')
+                ->OrderBy('created_at', 'ASC')
+                ->get();
+        return \view('admin/pages/post-add', ['collection'=>$data]);
     }
 
     function store(Request $request){
@@ -53,6 +58,7 @@ class AllPostController extends Controller
             'addTags'=> 'required',
             'addSlug'=> 'required',
             'addDate'=> 'required',
+            'status'=> 'required',
         ]);
         $data = Kft_allpost::where('id', $request->id)
                             ->update([
@@ -60,7 +66,8 @@ class AllPostController extends Controller
                                 'content'=>$request->post,
                                 'tags'=>$request->addTags,
                                 'slug'=>Str::slug($request->addSlug),
-                                'date'=>$request->addDate
+                                'date'=>$request->addDate,
+                                'status'=>$request->status
                                     ]);
         if ($data == true) {
             return redirect('/admin/all-post')->with('success', 'Congratulations!, You are successfully update your post');

@@ -6,3 +6,10 @@
  * Version	 :	1.0.0
  * Updated	 :	07.23.2020
 **/
+
+/** Custom */
+.invalid-err{
+    color: #e85347 !important;
+    font-size: 11px !important;
+    font-style: italic !important;
+}

@@ -174,7 +174,8 @@ return [
         'addSlug'=> 'Slug',
         'categories'=> 'Categories',
         'addDate'=> 'Date',
-        'photo'=> 'Featured Image'
+        'photo'=> 'Featured Image',
+        'nameCategories' => 'Categories Name'
     ],
 
 ];

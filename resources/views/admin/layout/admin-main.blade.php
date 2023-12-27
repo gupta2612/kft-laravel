@@ -13,6 +13,8 @@
     <title>@yield('admin-title') || {{ config('app.name') }}</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/dashlite.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/libs/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/theme.css') }}">
 </head>
 
 <body class="nk-body npc-default has-apps-sidebar has-sidebar ">
@@ -124,6 +126,9 @@
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
                                         <a href="/admin/all-post" class="nk-menu-link"><span class="nk-menu-text">All Post</span></a>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="/admin/{{ Auth::guard('admin')->user()->id }}/user-post" class="nk-menu-link"><span class="nk-menu-text">Your Post</span></a>
                                     </li>
                                     <li class="nk-menu-item">
                                         <a href="/admin/post-add" class="nk-menu-link"><span class="nk-menu-text">Add Post</span></a>

@@ -15,7 +15,7 @@
                         <div class="nk-block-head-content">
                             <h3 class="nk-block-title page-title">Posts </h3>
                             <div class="nk-block-des text-soft">
-                                <p>You have total 95 posts.</p>
+                                <p>You have total <strong>{{ $collection->count() }}</strong> posts.</p>
                             </div>
                         </div><!-- .nk-block-head-content -->
                         @if (Session::has('success'))
@@ -29,7 +29,7 @@
                                     <em class="icon ni ni-cross-circle"></em>
                                     {{ Session::get('wrong') }}
                                 </div>
-                                @endif
+                        @endif
                         <div class="nk-block-head-content">
                             <a href="/admin/post-add" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
                             <a href="/admin/post-add" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add Post</span></a>
@@ -89,31 +89,31 @@
                             <div class="card-inner p-0">
                                 <div class="nk-tb-list nk-tb-ulist">
                                     <div class="nk-tb-item nk-tb-head">
-                                        <div class="nk-tb-col nk-tb-col-check">
-                                            <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                <input type="checkbox" class="custom-control-input" id="uid">
-                                                <label class="custom-control-label" for="uid"></label>
-                                            </div>
+                                        <div class="nk-tb-col tb-col-mb">
+                                            Sr. No.
                                         </div>
-                                        <div class="nk-tb-col"><span class="sub-text">Title</span></div>
+                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">Title</span></div>
                                         <div class="nk-tb-col tb-col-mb"><span class="sub-text">Author</span></div>
                                         <div class="nk-tb-col tb-col-md"><span class="sub-text">Categories</span></div>
                                         <div class="nk-tb-col tb-col-md"><span class="sub-text">Tags</span></div>
-                                        <div class="nk-tb-col tb-col-lg"><span class="sub-text">Action</span></div>
+                                        <div class="nk-tb-col tb-col-md"><span class="sub-text">Status</span></div>
+                                        <div class="nk-tb-col tb-col-sm"><span class="sub-text">Action</span></div>
 
                                     </div><!-- .nk-tb-item -->
                                     @foreach ($collection as $item)
-                                    <div class="nk-tb-item">
-                                        <div class="nk-tb-col nk-tb-col-check">
-                                            <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                <input type="checkbox" class="custom-control-input" id="uid1">
-                                                <label class="custom-control-label" for="uid1"></label>
-                                            </div>
+                                    <div class="nk-tb-item sr-no">
+                                        <div class="nk-tb-col tb-col-mb sr-no-start">
+                                            {{ $no++ }}
                                         </div>
                                         <div class="nk-tb-col">
+                                            @if ($item->status == 1 )
                                             <a href="/blog/blog-details/{{ $item->id }}/{{ $item->slug }}" target="_blank">
                                                 <span>{{ Str::words($item->title, 4, '...') }}</span>
                                             </a>
+                                            @else
+                                            <span>{{ Str::words($item->title, 4, '...') }}</span>
+                                            @endif
+
                                         </div>
                                         <div class="nk-tb-col tb-col-mb">
                                             <a href="javascript:void(0)">
@@ -130,12 +130,22 @@
                                             </a>
                                         </div>
                                         <div class="nk-tb-col tb-col-md">
-                                            <span>{{ $item->categories }}</span>
+                                            <span>{{ $item->categories_name }}</span>
                                         </div>
                                         <div class="nk-tb-col tb-col-md">
                                             <span>{{ $item->tags }}</span>
                                         </div>
                                         <div class="nk-tb-col tb-col-md">
+                                            @if ($item->status == 1)
+                                                <span>Published</span>
+                                            @elseif($item->status == 2)
+                                                <span>Pending</span>
+                                            @else
+                                                <span>Draft</span>
+                                            @endif
+                                        </div>
+                                        @if (Auth::guard('admin')->user()->id == $item->user_id)
+                                        <div class="nk-tb-col tb-col-sm">
                                             <span><a class="btn btn-trigger btn-icon" href="admin/edit-post/{{ $item->id }}" title="Edit Post" data-bs-toggle="tooltip">
                                                 <em class="icon ni ni-edit-fill"></em>
                                             </a></span> |
@@ -143,6 +153,22 @@
                                                 <em class="icon ni ni-trash-fill"></em>
                                             </a></span>
                                         </div>
+                                        @else
+                                            @if ($item->status == 1)
+                                            <div class="nk-tb-col tb-col-sm">
+                                                <span><a class="btn btn-trigger btn-icon" href="/blog/blog-details/{{ $item->id }}/{{ $item->slug }}" title="View Post" data-bs-toggle="tooltip" target="_blank">
+                                                    <em class="icon ti ti-eye"></em>
+                                                </a></span>
+                                            </div>
+                                            @else
+                                            <div class="nk-tb-col tb-col-sm">
+                                                <span><a class="btn btn-trigger btn-icon" href="javascript:void(0)" title="This is not View Post" data-bs-toggle="tooltip">
+                                                    <em class="icon ti ti-eye"></em>
+                                                </a></span>
+                                            </div>
+                                            @endif
+                                        @endif
+
                                     </div><!-- .nk-tb-item -->
                                     @endforeach
                                 </div><!-- .nk-tb-list -->
@@ -150,9 +176,8 @@
                             <div class="card-inner">
                                 <div class="nk-block-between-md g-3">
                                     <div class="g">
-                                        {{ $collection->links('pagination::bootstrap-4') }}
+                                        {{ $collection->links() }}
                                     </div>
-
                                 </div><!-- .nk-block-between -->
                             </div><!-- .card-inner -->
                         </div><!-- .card-inner-group -->
@@ -162,100 +187,5 @@
         </div>
     </div>
 </div>
-
-@endsection
-
-@section('quick-edit')
-
-<div class="modal fade" tabindex="-1" role="dialog" id="editPost">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <a href="#" class="close" data-bs-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
-            <div class="modal-body modal-body-md">
-                <h5 class="modal-title">Quick Edit</h5>
-                <form action="#" class="mt-4">
-                    <div class="row g-gs">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label" for="editTitle">Title</label>
-                                <input type="text" class="form-control" id="editTitle" placeholder="Title" value="Hello World!">
-                            </div>
-                        </div><!-- .col -->
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label" for="editSlug">Slug</label>
-                                <input type="text" class="form-control" id="editSlug" placeholder="Slug" value="hello-world">
-                            </div>
-                        </div><!-- .col -->
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label">Date</label>
-                                <div class="form-control-wrap">
-                                    <div class="form-icon form-icon-right">
-                                        <em class="icon ni ni-calendar"></em>
-                                    </div>
-                                    <input type="text" class="form-control date-picker" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy">
-                                </div>
-                            </div>
-                        </div><!-- .col -->
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label">Categories</label>
-                                <div class="form-control-wrap">
-                                    <select class="form-select js-select2" multiple="multiple" data-placeholder="Categories">
-                                        <option value="uncategorized">Uncategorized</option>
-                                        <option value="covid">Covid</option>
-                                        <option value="seo">SEO</option>
-                                        <option value="website">Website</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div><!-- .col -->
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label" for="editTags">Tags</label>
-                                <input type="text" class="form-control" id="editTags" placeholder="Tags" value="—">
-                            </div>
-                        </div><!-- .col -->
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label">Status</label>
-                                <div class="form-control-wrap">
-                                    <select class="form-select js-select2" data-placeholder="Status">
-                                        <option value="published">Published</option>
-                                        <option value="pending">Pending</option>
-                                        <option value="draft">Draft</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div><!-- .col -->
-                        <div class="col-md-6">
-                            <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="editComment">
-                                <label class="custom-control-label" for="editComment">Allow Comments</label>
-                            </div>
-                        </div><!-- .col -->
-                        <div class="col-md-6">
-                            <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="editPings">
-                                <label class="custom-control-label" for="editPings">Allow Pings</label>
-                            </div>
-                        </div><!-- .col -->
-                        <div class="col-12">
-                            <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
-                                <li>
-                                    <button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Update</button>
-                                </li>
-                                <li>
-                                    <a href="#" class="link link-light" data-bs-dismiss="modal">Cancel</a>
-                                </li>
-                            </ul>
-                        </div><!-- .col -->
-                    </div><!-- .row -->
-                </form>
-            </div><!-- .modal-body -->
-        </div><!-- .modal-content -->
-    </div><!-- .modal-dialog -->
-</div><!-- .modal -->
 
 @endsection

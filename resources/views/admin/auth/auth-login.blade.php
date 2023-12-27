@@ -13,6 +13,8 @@
     <title>Login || {{ config('app.name') }}</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/dashlite.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/libs/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/theme.css') }}">
 </head>
 
 <body class="nk-body npc-default pg-auth">
