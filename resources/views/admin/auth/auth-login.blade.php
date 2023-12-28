@@ -63,7 +63,7 @@
                                             <label class="form-label" for="default-01">Email</label>
                                         </div>
                                         <div class="form-control-wrap">
-                                            <input type="text" class="form-control form-control-lg" name="email" placeholder="Enter your email address">
+                                            <input type="text" class="form-control form-control-lg" name="email" placeholder="Enter your email address" autocomplete="off">
                                             <span class="invalid">@error('email')
                                                 {{ $message }}
                                                 @enderror</span>
@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="form-control-wrap">
 
-                                            <input type="password" class="form-control form-control-lg" name="password" placeholder="Enter your passcode">
+                                            <input type="password" class="form-control form-control-lg" name="password" placeholder="Enter your passcode" autocomplete="off">
                                             <span class="invalid">@error('password')
                                                 {{ $message }}
                                                 @enderror</span>

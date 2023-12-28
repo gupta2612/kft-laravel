@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use App\Mail\RegisteredNotification;
+use Mail;
 
 class RegisteredUserController extends Controller
 {
@@ -46,9 +48,19 @@ class RegisteredUserController extends Controller
         ]);
 
         if ($user == true) {
+            $content = [
+               'subject' => 'Registration Confirmation and Login Information',
+                'name' =>$request->name,
+                'username' =>$request->email,
+                'password' =>$request->password,
+            ];
+            Mail::to($request->email)->send(new RegisteredNotification($content));
             return redirect('/admin/login')->with('success', 'Congratulations!, Your are successfully registered');
         } else {
             return redirect('/admin/register')->with('wrong', 'Sorry!, Something Wrong');
         }
+
+
+
     }
 }

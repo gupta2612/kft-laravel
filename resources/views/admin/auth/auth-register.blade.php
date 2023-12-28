@@ -53,7 +53,7 @@
                                     <div class="form-group">
                                         <label class="form-label" for="name">Name</label>
                                         <div class="form-control-wrap">
-                                            <input type="text" class="form-control form-control-lg" name="name" placeholder="Enter your name" value="{{ old('name') }}">
+                                            <input type="text" class="form-control form-control-lg" name="name" placeholder="Enter your name" value="{{ old('name') }}" autocomplete="off">
                                             <span class="invalid">@error('name')
                                                 {{ $message }}
                                             @enderror</span>
@@ -62,7 +62,7 @@
                                     <div class="form-group">
                                         <label class="form-label" for="email">Email</label>
                                         <div class="form-control-wrap">
-                                            <input type="text" class="form-control form-control-lg" name="email" placeholder="Enter your email address" value="{{ old('email') }}">
+                                            <input type="text" class="form-control form-control-lg" name="email" placeholder="Enter your email address" value="{{ old('email') }}" autocomplete="off">
                                             <span class="invalid">@error('email')
                                                 {{ $message }}
                                             @enderror</span>
@@ -71,7 +71,7 @@
                                     <div class="form-group">
                                         <label class="form-label" for="password">Passcode</label>
                                         <div class="form-control-wrap">
-                                            <input type="password" class="form-control form-control-lg" name="password" placeholder="Enter your passcode" value="{{ old('password') }}">
+                                            <input type="password" class="form-control form-control-lg" name="password" placeholder="Enter your passcode" value="{{ old('password') }}" autocomplete="off">
                                             <span class="invalid">@error('password')
                                                 {{ $message }}
                                             @enderror</span>
