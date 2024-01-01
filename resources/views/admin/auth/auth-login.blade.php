@@ -63,7 +63,7 @@
                                             <label class="form-label" for="default-01">Email</label>
                                         </div>
                                         <div class="form-control-wrap">
-                                            <input type="text" class="form-control form-control-lg" name="email" placeholder="Enter your email address" autocomplete="off">
+                                            <input type="text" class="form-control form-control-lg" name="email" placeholder="Enter your email address" autocomplete="off" value="{{ old('email') }}">
                                             <span class="invalid">@error('email')
                                                 {{ $message }}
                                                 @enderror</span>

@@ -95,8 +95,11 @@ Route::namespace('Admin')->prefix('admin')->name('admin/')->group(function(){
 
         Route::get('media', 'BlogViewController@MediaView')->name('media');
 
-        Route::view('user-list', 'admin/pages/user-list');
+        Route::get('user-list', 'UsersController@AllUserView');
         Route::view('user-profile', 'admin/pages/user-profile');
+        Route::get('user-profile/update-user', 'UsersController@UpdateUserView')->name('view-user');
+        Route::post('update-user', 'UsersController@UpdateUser')->name('edit-user');
+        Route::post('update-password/{id}', 'UsersController@UpdatePassword')->name('update-password');
     });
     Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
 });

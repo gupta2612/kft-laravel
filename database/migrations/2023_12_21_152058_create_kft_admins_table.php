@@ -19,7 +19,9 @@ class CreateKftAdminsTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('mobile', 200)->nullable();
             $table->integer('type')->default(0);
+            $table->string('profile_image', 200)->nullable()->default('a-sm.jpg');
             $table->rememberToken();
             $table->timestamps();
         });

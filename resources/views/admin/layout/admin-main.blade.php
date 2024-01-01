@@ -46,7 +46,8 @@
                                         <a href="#" class="dropdown-toggle me-n1" data-bs-toggle="dropdown">
                                             <div class="user-toggle">
                                                 <div class="user-avatar sm">
-                                                    <em class="icon ni ni-user-alt"></em>
+                                                    {{-- <em class="icon ni ni-user-alt"></em> --}}
+                                                    <img src="{{ asset('admin/assets/images/avatar/'.Auth::guard('admin')->user()->profile_image) }}" alt="" srcset="">
                                                 </div>
                                             </div>
                                         </a>

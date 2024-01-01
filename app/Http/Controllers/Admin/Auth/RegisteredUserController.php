@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use App\Mail\RegisteredNotification;
+use Illuminate\Support\Facades\DB;
 use Mail;
+use File;
 
 class RegisteredUserController extends Controller
 {
@@ -59,8 +61,5 @@ class RegisteredUserController extends Controller
         } else {
             return redirect('/admin/register')->with('wrong', 'Sorry!, Something Wrong');
         }
-
-
-
     }
 }

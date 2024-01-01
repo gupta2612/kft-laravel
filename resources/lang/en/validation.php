@@ -148,7 +148,11 @@ return [
         'photo' => [
             'mimes' => 'Select only JPG, JPEG and PNG file',
             'between'   => 'The featured image must be between 50 kb to 300 kb.'
-        ]
+        ],
+        'mobile' => [
+            'digits_between' => 'Enter Valid Mobile No. in field',
+            'numeric' => 'Enter Only Numeric No. in field'
+        ],
     ],
 
     /*
@@ -167,6 +171,7 @@ return [
         'name'=> 'Complete Name',
         'subject'=> 'Subject',
         'description'=> 'Description',
+        'mobile' => 'Mobile',
 
         'addTitle'=> 'Title',
         'post'=> 'Content',
