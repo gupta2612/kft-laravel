@@ -15,12 +15,8 @@
                         <div class="nk-block-head-content">
                             <h3 class="nk-block-title page-title">Users</h3>
                             <div class="nk-block-des text-soft">
-                                <p>You have total 10 users.</p>
+                                <p>You have total <strong>{{ $AllUsers->count() }}</strong> users.</p>
                             </div>
-                        </div><!-- .nk-block-head-content -->
-                        <div class="nk-block-head-content">
-                            <a data-bs-toggle="modal" href="#addUser" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
-                            <a data-bs-toggle="modal" href="#addUser" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add User</span></a>
                         </div><!-- .nk-block-head-content -->
                     </div><!-- .nk-block-between -->
                 </div><!-- .nk-block-head -->

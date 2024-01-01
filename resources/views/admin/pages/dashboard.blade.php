@@ -18,7 +18,7 @@
                                     <div class="card-title">
                                         <h3 class="title">Welcome to KFT Dashboard! </h3>
                                     </div>
-                                    
+
                                     <!-- .row -->
                                 </div><!-- .card-inner -->
                             </div><!-- .card -->
@@ -46,8 +46,8 @@
                                                 <line x1="65.67" y1="52.24" x2="70.35" y2="56.86" fill="none" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
                                             </svg>
                                         </div>
-                                        <div> <span class="title text-white fw-bold fs-17px">Pages</span> <span class="fw-medium text-white">06</span></div>
-                                        <a class="fw-medium" href="html/cms/page-add.html">Add page</a>
+                                        <div> <span class="title  fw-bold fs-17px">Pages</span> <span class="fw-medium">30</span></div>
+                                        <a class="fw-medium" href="javascript:void(0)">Add page</a>
                                     </div><!-- .preview-icon-box -->
                                 </li><!-- .col -->
                                 <li class="col-lg-3 col-sm-6 col-12">
@@ -72,8 +72,8 @@
                                                 <line x1="64" y1="46" x2="66" y2="46" fill="none" stroke="#c4cefe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
                                             </svg>
                                         </div>
-                                        <div> <span class="title fw-bold fs-17px">Post</span> <span class="fw-medium">12</span></div>
-                                        <a class="fw-medium" href="html/cms/post-list.html">View Post</a>
+                                        <div> <span class="title fw-bold fs-17px">Post</span> <span class="fw-medium">{{ $collection->count() }}</span></div>
+                                        <a class="fw-medium" href="/admin/all-post">View Post</a>
                                     </div><!-- .preview-icon-box -->
                                 </li><!-- .col -->
                                 <li class="col-lg-3 col-sm-6 col-12">
@@ -89,8 +89,8 @@
                                                 <circle cx="52.11" cy="54.98" r="2.02" fill="none" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
                                             </svg>
                                         </div>
-                                        <div> <span class="title fw-bold fs-17px">Media</span> <span class="fw-medium">25</span></div>
-                                        <a class="fw-medium" href="html/cms/media.html">Add Media</a>
+                                        <div> <span class="title fw-bold fs-17px">Media</span> <span class="fw-medium">{{ $collection->count() }}</span></div>
+                                        <a class="fw-medium" href="admin/media">Add Media</a>
                                     </div><!-- .preview-icon-box -->
                                 </li><!-- .col -->
                                 <li class="col-lg-3 col-sm-6 col-12">
@@ -118,8 +118,8 @@
                                                 <circle cx="24" cy="23" r="2.5" fill="none" stroke="#9cabff" stroke-miterlimit="10" />
                                             </svg>
                                         </div>
-                                        <div> <span class="title fw-bold fs-17px">Comments</span> <span class="fw-medium">05</span></div>
-                                        <a class="fw-medium" href="html/cms/comments.html">View Comments</a>
+                                        <div> <span class="title fw-bold fs-17px">Comments</span> <span class="fw-medium">XX</span></div>
+                                        <a class="fw-medium" href="javascript:void(0)">View Comments</a>
                                     </div><!-- .preview-icon-box -->
                                 </li><!-- .col -->
                             </ul><!-- .row -->
